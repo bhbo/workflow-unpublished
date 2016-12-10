@@ -1,0 +1,182 @@
+{% extends 'workflows/base_visitor.html' %}
+
+{% block body %}
+    {% load staticfiles %}
+
+    <div class="intro-header" >
+     </div>
+
+
+	<div class="col-xs-12 text-center abcen1" style = "top: 45%">
+			<h1 class="h1_home wow fadeIn" data-wow-delay="0.4s">WORKFLOW ENGINE</h1>
+			<h3 class="h3_home wow fadeIn" data-wow-delay="0.6s">Automate Workflow</h3>
+			<ul class="list-inline intro-social-buttons">
+				<li id="download"><a href="#downloadlink" class="btn  btn-lg mybutton_standard wow swing wow fadeIn animated animated" data-wow-delay="1.2s" style="visibility: visible; animation-delay: 1.2s;"><span class="network-name">Get started</span></a>
+				</li>
+
+			</ul>
+		</div>
+
+
+        <!-- /.container -->
+		<div class="col-xs-12 text-center abcen wow fadeIn">
+			<div class="button_down ">
+				<a class="imgcircle wow bounceInUp" data-wow-duration="1.5s"  href="#whatis"> <img class="img_scroll" src="{% static 'img/icon/circle.png' %}" alt=""> </a>
+			</div>
+		</div>
+
+
+
+	<!-- What is -->
+	<div id="whatis" class="content-section-b" style="border-top: 0">
+		<div class="container">
+
+			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+				<h2>What is?</h2>
+				<p class="lead" style="margin-top:0">About the engine</p>
+
+			</div>
+
+
+
+            <div class="row">
+
+				<div class="col-sm-4 wow fadeInDown text-center">
+				  <img class="rotate" src="{% static 'img/icon/pencil.svg' %}"  alt="Generic placeholder image">
+                    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+
+				</button>
+				<a class="navbar-brand" href="{% url 'workflows:profileedit' %}">ALUMNI</a>
+<!--
+				  <h3>Create workflows in seconds</h3>
+				  <p class="lead"> To build a workflow, just drag and drop together a series of actions. </p>
+-->
+				  <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+
+				<div class="col-sm-4 wow fadeInDown text-center">
+				  <img  class="rotate" src="{% static 'img/icon/pencil.svg' %}" alt="Generic placeholder image">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+
+
+				</button>
+				<a class="navbar-brand" href="{% url 'workflows:profileedit' %}">STAFF</a>
+
+                    <!--
+
+				   <h3>Make your own apps</h3>
+				   <p class="lead">Easily track bottle necks in your Workflow and monitor Process Efficiency. </p>-->
+				   <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+
+				<div class="col-sm-4 wow fadeInDown text-center">
+				  <img  class="rotate" src="{% static 'img/icon/pencil.svg' %}" alt="Generic placeholder image">
+                    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+
+				</button>
+				<a class="navbar-brand" href="{% url 'workflows:profileedit' %}">STUDENT</a>
+
+                    <!--
+				   <h3>Anywhere. Anytime.</h3>
+					<p class="lead">Real time collaboration </p>
+					-->
+				  <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+
+			</div>
+            <!-- /.row -->
+
+
+            <!-- /.row -->
+
+
+
+
+
+		</div>
+	</div>
+
+	<!-- Use it -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+             <div class="row">
+
+				<div class="col-sm-6 pull-right wow fadeInRightBig">
+                    <img class="img-responsive " src="{% static 'img/imac.png' %}" alt="">
+                </div>
+
+                <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">
+                    <h3 class="section-heading">Create workflows in seconds</h3>
+                    <p class="lead">To build a workflow, just drag and drop together a series of actions.
+					</p>
+
+					<ul class="descp lead2">
+						<li><i class="glyphicon glyphicon-signal"></i> Reliable and Secure Platform</li>
+						<li><i class="glyphicon glyphicon-refresh"></i> Everything is perfectly orgainized for future</li>
+						<li><i class="glyphicon glyphicon-headphones"></i> Attach large file easily</li>
+					</ul>
+				</div>
+            </div>
+        </div>
+
+    </div>
+
+	<div id="signup" class="content-section-b" style="border-top: 0">
+
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Register for an Account</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        {% include 'workflows/form_template.html' %}
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-footer">
+                    Already have an account? <a href="{% url 'workflows:login_user' %}">Click here</a> to log in.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+	<!-- Banner Download -->
+	<!--
+
+	<div id="downloadlink" class="banner">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+				<h2>Download Free</h2>
+				<p class="lead" style="margin-top:0">Pay with a Tweet</p>
+				<p><a class="btn btn-embossed btn-primary view" role="button">Free Download</a></p>
+			 </div>
+			</div>
+		</div>
+	</div>
+	-->
+
+
+    

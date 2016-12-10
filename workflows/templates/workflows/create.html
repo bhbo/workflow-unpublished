@@ -1,0 +1,107 @@
+{% extends 'workflows/base.html' %}
+{% block title %}Welcome {{ user.username }}! {% endblock %}
+{% block body %}
+    {% load staticfiles %}
+
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Creat task</title>
+    <!--REQUIRED STYLE SHEETS-->
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+    <!-- FONTAWESOME STYLE CSS -->
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" />
+    <!--ANIMATED FONTAWESOME STYLE CSS -->
+    <link href="{% static 'assets/css/font-awesome-animation.css' %}" rel="stylesheet" />
+       <!-- CUSTOM STYLE CSS -->
+
+    <link href="{% static 'assets/css/create.css' %}" rel="stylesheet" />
+
+
+    <!-- GOOGLE FONT -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel='stylesheet' type='text/css'>
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script type="{% static 'assets/js/create.js' %}"></script>
+
+
+<style>
+  td{
+    border: 10px solid white;
+  }
+</style>
+</head>
+<body >
+
+
+
+  <form id="msform" role="form" action="{% url 'workflows:create'%}" method="post" enctype="multipart/form-data">
+  <!-- progressbar -->
+  <ul id="progressbar">
+    <li class="active">CREATE WORKFLOW</li>
+    <li>DESIGN WORKFLOW</li>
+    <li>DESIGN FORM</li>
+    <li>PUBLISH WORKFLOW</li>
+  </ul>
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 class="fs-title">Create new</h2>
+    <h3 class="fs-subtitle">workflow</h3>
+
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Name of the Workflow" />
+        <input type="text" name="description" placeholder="Short description for users" />
+        <ul><input type="submit" name="submit" class="next action-button" value="Next" /></ul>
+
+
+  </fieldset>
+  <!--<fieldset>
+    <h2 class="fs-title">Social Profiles</h2>
+    <h3 class="fs-subtitle">Your presence on the social network</h3>
+    <input type="text" name="twitter" placeholder="Twitter" />
+    <input type="text" name="facebook" placeholder="Facebook" />
+    <input type="text" name="gplus" placeholder="Google Plus" />
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title">Personal Details</h2>
+    <h3 class="fs-subtitle">We will never sell it</h3>
+    <input type="text" name="fname" placeholder="First Name" />
+    <input type="text" name="lname" placeholder="Last Name" />
+    <input type="text" name="phone" placeholder="Phone" />
+    <textarea name="address" placeholder="Address"></textarea>
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+  </fieldset>
+<fieldset>
+    <h2 class="fs-title">Personal Details</h2>
+    <h3 class="fs-subtitle">We will never sell it</h3>
+    <input type="text" name="fname" placeholder="First Name" />
+    <input type="text" name="lname" placeholder="Last Name" />
+    <input type="text" name="phone" placeholder="Phone" />
+    <textarea name="address" placeholder="Address"></textarea>
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+  </fieldset>-->
+</form>
+
+   <!-- CORE JQUERY  -->
+    <script src="{% static 'assets/plugins/jquery-1.10.2.js' %}"></script>
+    <!-- BOOTSTRAP CORE SCRIPT   -->
+    <script src="{% static 'assets/plugins/bootstrap.js' %}"></script>
+
+    <!-- CUSTOM SCRIPTS -->
+    <script src="{%static 'assets/js/custom.js' %}"></script>
+
+</body>
+
+
+{% endblock %}

@@ -1,0 +1,1222 @@
+{% extends 'workflows/base_visitor.html' %}
+ {% load staticfiles %}
+<head>
+      <!--Import Google Icon Font-->
+
+      <!--Import materialize.css-->
+<link rel="stylesheet" href=" {% static 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css' %} ">
+
+<link rel="stylesheet" href=" {% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css' %} ">
+
+
+
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+
+
+{% block body %}
+
+	<div id="FormSection" class="row" style="height:100%; padding-top:2.7rem">
+		<!-- side nav section -->
+
+        <div class="container">
+                    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+                    <div id="work-collections">
+
+                               <div class="col s12 m6 l6">
+                                <ul id="profile-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+                                        <div class="col s12 m4 l2">
+                                            <div id='profile-upload'>
+                                                <div class="hvr-profile-img"><input type="file" name="logo" id='getval'  class="upload w180" title="Upload your profile picture" id="imag"></div>
+                                                <i class="fa fa-camera"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col s12 m4 l9">
+                                            <span class="collection-header">Profile(Shared)</span>
+                                            <p>Personal and Contact Information</p>
+                                        </div>
+
+                                    </li>
+                                    <li class="collection-item">
+                                    <div class="row">
+
+                                    <div class="input-field col s12 m4 l3">
+                                    <br>
+									<select class = "browser-default" id="userType">
+                                        <option value="" disabled  selected>Who you are</option>
+                                        <option value="1">Academic Staff</option>
+                                        <option value="2">Student</option>
+                                        <option value="3">Alumni</option>
+
+                                    </select>
+                                    <!--<label>Title</label>-->
+								    </div>
+
+                                    <div class="input-field col s12 m4 l2">
+                                    <br>
+									<select class = "browser-default" id="title">
+                                        <option value="" disabled  selected>Title</option>
+                                        <option value="1">Mr.</option>
+                                        <option value="2">Mrs.</option>
+                                        <option value="3">Ms.</option>
+                                        <option value="4">Miss</option>
+
+                                        <option value="5">Dr.</option>
+                                         <option value="6">Asst. Prof.</option>
+                                        <option value="7">Assoc. Prof.</option>
+                                        <option value="8">Prof.</option>
+                                        <option value="9">Asst. Prof. Dr.</option>
+                                        <option value="10">Assoc. Prof. Dr.</option>
+                                        <option value="11">Prof. Dr.</option>
+                                    </select>
+                                    <!--<label>Title</label>-->
+								    </div>
+								<div class="input-field col s12 m4 l3">
+									<span class="fieldLabel">First Name</span>
+									<input placeholder="First Name" id="firstName" type="text" />
+								</div>
+
+								<div class="input-field col s12 m4 l4">
+									<span class="fieldLabel">Last Name</span>
+									<input placeholder="Last Name" id="lastName" type="text" />
+								</div>
+
+
+                                </div>
+
+
+                                <div class="row">
+
+                                    <div class="input-field col s12 m4 l3">
+									<span class="fieldLabel">Date Of Birth</span>
+									<input id="DOB" type="date" class="datepicker" /placeholder="19/12/1988">
+								</div>
+
+
+
+
+								<div class="input-field col s4">
+                                    <span class="fieldLabel">Department</span>
+
+                                        <select class = "browser-default" id="department">
+                                            <option value="" disabled selected>Choose your option</option>
+                                            <option value="1">Telecommunications Engineering</option>
+                                            <option value="2">Electrical Engineering</option>
+                                            <option value="3">Electronics Engineering</option>
+                                            <option value="4">Computer Engineering</option>
+                                            <option value="5">Intrumentation and Control Engineering</option>
+                                            <option value="6">Civil Engineering</option>
+                                            <option value="7">Mechanical Engineering</option>
+                                            <option value="8">Industrial Engineering</option>
+                                            <option value="9">Chemical Engineering</option>
+                                            <option value="10">Food Engineering</option>
+
+
+                                        </select>
+                                            </div>
+                                    <div class="input-field col s12 m4 l5">
+									<span class="fieldLabel">LinkedIn or Social Network</span>
+									<input placeholder="facebook.com/mafte.s" id="tel" type="text" />
+								</div>
+                                </div>
+
+                                <div class="row">
+								<div class="input-field col s12 m6 l6">
+									<span class="fieldLabel">Mobile</span>
+									<input placeholder="081-234-5678" id="tel" type="text" />
+								</div>
+								<div class="input-field col s12 m6 l6">
+									<span class="fieldLabel">Email</span>
+									<input placeholder="john.d@mail.com" id="email" type="email" class="validate">
+								</div>
+
+                                        </div>
+
+                                          <div class="row">
+								<div class="input-field col s12 m6 l6">
+									<span class="fieldLabel">Loop ID</span>
+									<input placeholder="081-234-5678" id="tel" type="text" />
+								</div>
+								<div class="input-field col s12 m6 l6">
+									<span class="fieldLabel">Facebook name</span>
+									<input placeholder="john.d@mail.com" id="email" type="email" class="validate">
+								</div>
+
+
+
+                                    </li>
+
+
+
+                                </ul>
+
+
+                            </div>
+
+                            <div class="col s12 m12 l6">
+                                <ul id="address-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+                                        <div class="col s12 m4 l9">
+                                            <i class="mdi-action-home circle green darken-2"></i>
+                                            <span class="collection-header">Address(Shared)</span>
+                                            <p>and More Information</p>
+                                        </div>
+
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+
+                                            <div class="input-field col s12">
+                                                <span class="fieldLabel">Address Line 1</span>
+                                                <input  id="AddressNo" type="text" >
+								            </div>
+
+
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+
+                                            <div class="input-field col s12">
+                                                <span class="fieldLabel">Address Line 2</span>
+                                                <input  id="AddressNo" type="text" >
+								            </div>
+
+
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="input-field col s12 m4 l4">
+                                                <span class="fieldLabel">District</span>
+                                                <input placeholder="Wangthonglang" id="AddressDistrict" type="text" >
+								            </div>
+
+                                            <div class="input-field col s12 m4 l4">
+                                                <span class="fieldLabel">Province</span>
+                                                <input placeholder="Bangkok" id="AddressCity" type="text" >
+								            </div>
+                                            <div class="input-field col s12 m4 l4">
+                                                <span class="fieldLabel">Postcode</span>
+                                                <input placeholder="10900" id="AddressProvince" type="text" >
+								            </div>
+                                        </div>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                        <div class="col s12 m12 l6">
+
+                                <ul id="expertise-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+
+                                        <i class="mdi-image-tune circle teal"></i>
+                                       <span class="collection-header">Expertise and Research Interests(Shared)</span>
+                                        <p>Area of your interests</p>
+
+                                    </li>
+                                    <li class="collection-item">
+
+                                        <div class="row">
+                                            <div class="col s4">
+                                                <span class="fieldLabel">
+                                                    Expertise</span>
+									       <input placeholder="Enter area of your expertise" id="expertise-input" type="text" />
+                                                <p><a class="waves-effect waves-light btn" onclick= "addExpertise()">add</a></p>
+                                            </div>
+
+                                            <div class="col s12 m4 l8" id="expertise-div">
+                                                </div>
+
+                                        </div>
+                                    </li>
+                                   <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s4">
+                                                <span class="fieldLabel">
+                                                    Interests</span>
+									       <input placeholder="Enter area of your interests" id="interests-input" type="text" />
+                                                <p><a class="waves-effect waves-light btn" onclick= "addInterests()">add</a></p>
+                                            </div>
+
+                                            <div class="col s12 m4 l8" id="interests-div">
+                                                </div>
+
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+
+                            <div class="col s12 m12 l6">
+                                <ul id="projects-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+                                        <div class="col s12 m4 l9">
+                                            <i class="mdi-social-school circle light-blue darken-2"></i>
+                                            <span class="collection-header">Education Background (Shared)</span>
+                                            <p>Past and Current Study</p>
+                                        </div>
+                                        <div class="col l3">
+                                            <div align = "right">
+                                                <a class="waves-effect waves-light btn" id = "addMoreEdu">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                     <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s4">
+
+                                                     <span class="fieldLabel">
+                                                    Institute's Name</span>
+									       <input placeholder="ABC Demonstration School" id="IntsName" type="text" />
+
+
+                                            </div>
+                                            <div class="col s4">
+
+                                                     <span class="fieldLabel">
+                                                    Program</span>
+									       <input placeholder="Software Engineering" id="IntsName" type="text" />
+
+
+                                            </div>
+                                            <div class="input-field col s2">
+
+
+                                                <select class = "browser-default">
+                                            <option value="" disabled selected>Degree </option>
+                                            <option value="1">High School</option>
+                                            <option value="2">College</option>
+                                            <option value="3">Bachelor's degree</option>
+                                            <option value="4">Master's degree</option>
+                                            <option value="5">Doctoral Degree</option>
+
+
+                                                </select>
+                                            </div>
+                                            <div class="col s2">
+
+                                               <span class="fieldLabel">
+                                                    Year</span>
+									       <input placeholder="2005" id="IntsName" type="text" />
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+
+
+                          <div class="col s12 m12 l6">
+                                <ul id="projects-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+
+                                        <i class="material-icons circle teal lighten-1">assignment_ind</i>
+                                       <span class="collection-header">Current Work (Alumni)</span>
+                                        <p>current working information</p>
+
+                                    </li>
+
+
+                                     <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <p class="collections-title">
+                                                     <span class="fieldLabel">
+                                                    Company's Name</span>
+									       <input placeholder="iDigital Management Solution" id="IntsName" type="text" />
+                                           </p>
+
+                                            </div>
+                                            <div class="col s4">
+
+                                               <span class="fieldLabel">
+                                                    Position</span>
+									       <input placeholder="Senior Project Manager" id="position1" type="text" />
+                                            </div>
+                                            <div class="col s3">
+
+                                               <span class="fieldLabel">
+                                                   Location</span>
+									       <input placeholder="Bangkok, Thailand" id="position1" type="text" />
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col s4">
+                                                <p class="collections-title">
+                                                     <span class="fieldLabel">
+                                                    Time Period From</span>
+									       <select class = "browser-default">
+                                            <option value="" disabled selected>Choose</option>
+                                            <option value="1">January</option>
+                                            <option value="2">Febbuary</option>
+                                            <option value="3">March</option>
+                                            <option value="4">April</option>
+                                            <option value="5">May</option>
+                                               <option value="6">June</option>
+                                               <option value="7">July</option>
+                                               <option value="8">August</option>
+                                               <option value="9">September</option>
+                                               <option value="10">October</option>
+                                               <option value="11">November</option>
+                                               <option value="12">December</option>
+
+
+                                                </select>
+
+                                           </p>
+
+
+                                            </div>
+                                            <div class="col s2">
+
+
+                                               <span class="fieldLabel">
+                                                  Year  </span>
+									           <input placeholder="2013" id="IntsName" type="text" />
+
+
+                                            </div>
+
+
+
+
+
+                                            <div class="col s6">
+                                                <span class="fieldLabel">Description</span>
+													<textarea id="project-abstract" placeholder="Accomplishes financial objectives by forecasting requirements; preparing an annual budget; scheduling expenditures; analyzing variances; initiating corrective actions." class="materialize-textarea" length="1000"  maxlength="1000" rows="10"></textarea>
+                                            </div>
+
+                                        </div>
+                                    </li>
+
+
+
+
+                                </ul>
+                        </div>
+
+                        <div class="col s12 m12 l6">
+                            <ul id="projects-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+                                        <div class="col s12 m4 l9">
+                                            <i class="mdi-action-wallet-travel circle pink darken-2"></i>
+                                            <span class="collection-header">Working Experiences (Shared)</span>
+                                            <p>and career information</p>
+                                        </div>
+                                        <div class="col l3">
+                                            <div align = "right">
+                                                <a class="waves-effect waves-light btn" id = "addMoreEdu">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <p class="collections-title">
+                                                     <span class="fieldLabel">
+                                                    Company's Name</span>
+									       <input placeholder="iDigital Management Solution" id="IntsName" type="text" />
+                                           </p>
+
+                                            </div>
+                                            <div class="col s4">
+
+                                               <span class="fieldLabel">
+                                                    Position</span>
+									       <input placeholder="Senior Project Manager" id="position1" type="text" />
+                                            </div>
+                                            <div class="col s3">
+
+                                               <span class="fieldLabel">
+                                                   Location</span>
+									       <input placeholder="Bangkok, Thailand" id="position1" type="text" />
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col s4">
+                                                <p class="collections-title">
+                                                     <span class="fieldLabel">
+                                                    Time Period From</span>
+									       <select class = "browser-default">
+                                            <option value="" disabled selected>Choose</option>
+                                            <option value="1">January</option>
+                                            <option value="2">Febbuary</option>
+                                            <option value="3">March</option>
+                                            <option value="4">April</option>
+                                            <option value="5">May</option>
+                                               <option value="6">June</option>
+                                               <option value="7">July</option>
+                                               <option value="8">August</option>
+                                               <option value="9">September</option>
+                                               <option value="10">October</option>
+                                               <option value="11">November</option>
+                                               <option value="12">December</option>
+
+
+                                                </select>
+
+                                           </p>
+                                            <p class="collections-title">
+                                                     <span class="fieldLabel">
+                                                   To </span>
+									       <select class = "browser-default">
+                                            <option value="" disabled selected>Choose</option>
+                                            <option value="1">January</option>
+                                            <option value="2">Febbuary</option>
+                                            <option value="3">March</option>
+                                            <option value="4">April</option>
+                                            <option value="5">May</option>
+                                               <option value="6">June</option>
+                                               <option value="7">July</option>
+                                               <option value="8">August</option>
+                                               <option value="9">September</option>
+                                               <option value="10">October</option>
+                                               <option value="11">November</option>
+                                               <option value="12">December</option>
+
+
+                                                </select>
+
+                                           </p>
+
+
+                                            </div>
+                                            <div class="col s2">
+
+
+                                               <span class="fieldLabel">
+                                                  Year  </span>
+									           <input placeholder="2013" id="IntsName" type="text" />
+
+                                                <span class="fieldLabel">Year
+                                                     </span>
+
+									       <input placeholder="2013" id="IntsName" type="text" />
+                                            </div>
+
+
+
+
+
+                                            <div class="col s6">
+                                                <span class="fieldLabel">Description</span>
+													<textarea id="project-abstract" placeholder="Accomplishes financial objectives by forecasting requirements; preparing an annual budget; scheduling expenditures; analyzing variances; initiating corrective actions." class="materialize-textarea" length="1000"  maxlength="1000" rows="10"></textarea>
+                                            </div>
+
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                        </div>
+                        <div class="col s12 m12 l12">
+                            <h1 class="one">
+
+                            </h1>
+                            <br>
+                        </div>
+
+
+
+
+                        <div class="col s12 m12 l6">
+                                <ul id="projects-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+
+                                        <i class="mdi-social-school circle red darken-2"></i>
+                                       <span class="collection-header">Academic Information(Student)</span>
+                                        <p>and Current Study</p>
+
+                                    </li>
+
+
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s4">
+                                                <p class="collections-title">
+                                                     <span class="fieldLabel">
+                                                    Favorite Subjects</span>
+
+                                                </p>
+                                                 <input placeholder="Mathematics 2" id="IntsName" type="text" />
+
+                                            </div>
+                                            <div class="col s4">
+
+                                            <span class="fieldLabel">
+                                                    (Optional)</span>
+									       <input placeholder="Artificial Inteligence" id="IntsName" type="text" />
+
+                                            </div>
+                                            <div class="col s4">
+
+                                               <span class="fieldLabel">
+                                                    (Optional)</span>
+									       <input placeholder="Database Systems" id="IntsName" type="text" />
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+
+
+
+
+                                </ul>
+                        </div>
+
+                        <div class="col s12 m12 l6">
+                                <ul id="projects-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+
+                                        <i class="mdi-image-palette circle purple darken-2"></i>
+                                       <span class="collection-header">Personal Information (Student/Alumni)</span>
+                                        <p>All about yourself</p>
+
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s6">
+                                                <p class="collections-title">
+                                                     <span class="fieldLabel">
+                                                    Language Skills</span>
+
+                                                </p>
+                                                 <input placeholder="Thai, English and Japanese" id="IntsName" type="text" />
+
+                                            </div>
+
+                                            <div class="col s6">
+                                                <p class="collections-title">
+                                                     <span class="fieldLabel">
+                                                    Sports</span>
+
+                                                </p>
+                                                 <input placeholder="Ice Skating, Badminton and Basketball" id="IntsName" type="text" />
+
+                                            </div>
+
+                                        </div>
+                                    </li>
+
+
+
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <p class="collections-title">
+                                                     <span class="fieldLabel">
+                                                    Leisures and Hobbies</span>
+
+                                           </p>
+                                                <input placeholder="Puzzles" id="IntsName" type="text" />
+
+                                            </div>
+                                            <div class="col s3">
+
+                                            <span class="fieldLabel">
+                                                    (Optional)</span>
+									       <input placeholder="Reading Books" id="IntsName" type="text" />
+
+                                            </div>
+                                            <div class="col s3">
+
+                                               <span class="fieldLabel">
+                                                    (Optional)</span>
+									       <input placeholder="Playing Guitar" id="IntsName" type="text" />
+                                            </div>
+                                            <div class="col s3">
+
+                                               <span class="fieldLabel">
+                                                    (Optional)</span>
+									       <input placeholder="Painting" id="IntsName" type="text" />
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+
+
+                                </ul>
+                        </div>
+
+
+
+                        <div class="col s12 m12 l6"><ul id="teaching-collection" class="collection"><br><li class="collection-item avatar"><div class="col s12 m4 l9"><i class="mdi-file-folder circle green darken-2"></i><span class="collection-header">Teaching Subjects(Staff)</span><p>and information</p></div><div class="col l3"><div align = "right"><a class="waves-effect waves-light btn" id = "addTeachingSubject">Add</a></div></div></li><li class="collection-item"><div class="row"><div class="input-field col s12 m4 l7"><span class="fieldLabel">Subject </span><input placeholder="Basic Electronics" id="SubjName" type="text" /></div><div class="input-field col s12 m4 l5"><span class="fieldLabel">Program</span><input placeholder="Computer Engineering" id="SubjProgram" type="text" /></div></div></li></ul></div>
+
+                        <div class="col s12 m12 l6"><ul  class="collection"><br><li class="collection-item avatar"><div class="col s12 m4 l9"><i class="mdi-action-assignment-ind circle red darken-2"></i><span class="collection-header">Academic Information(Staff)</span><p></p></div></li><li class="collection-item"><div class="row"><div class="input-field col s12 m4 l3"><span class="fieldLabel">Position</span><input placeholder="Lecturer" id="Position" type="text" /></div><div class="input-field col s12 m4 l5"><span class="fieldLabel">Research Lab (Optional)</span><input placeholder="Bionuclear Science & Engineering" id="ResearchLab" type="text" /></div><div class="input-field col s4"><span class="fieldLabel">Department</span><select class = "browser-default"><option value="" disabled selected>Choose your option</option><option value="1">Telecommunications Engineering</option><option value="2">Electrical Engineering</option><option value="3">Electronics Engineering</option><option value="4">Computer Engineering</option><option value="5">Intrumentation and Control Engineering</option><option value="6">Civil Engineering</option><option value="7">Mechanical Engineering</option><option value="8">Industrial Engineering</option><option value="9">Chemical Engineering</option><option value="10">Food Engineering</option></select></div></div></li></ul></div>
+
+
+
+                         <div class="col s12 m12 l12">
+                                <ul id="projectSuper-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+
+                                        <div class="col s12 m4 l9">
+                                             <i class="mdi-hardware-laptop-mac circle light-blue darken-2"></i>
+
+                                           <span class="collection-header">Projects (Staff)</span>
+
+                                            <p>Past and current projects</p>
+                                        </div>
+                                        <div class="col l3">
+                                            <div align = "right">
+                                                <a class="waves-effect waves-light btn" id = "addMoreProjectSupervisor">Add</a>
+                                            </div>
+                                        </div>
+
+
+
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+
+                                            <div class="input-field col s12 m4 l1">
+                                                <br>
+
+                                               <select class = "browser-default" id="project-studentsYear">
+                                                    <option value="" disabled selected>Year </option>
+                                                    <option value="1">Year 3</option>
+                                                    <option value="2">Year 4</option>
+                                                    <option value="3">others</option>
+                                                </select>
+
+								            </div>
+
+								            <div class="input-field col s12 m4 l3">
+                                                <span class="fieldLabel">Title</span>
+                                                <input placeholder="Verification Concept for Embedded Platforms" id="project-title" type="text" />
+								            </div>
+
+
+                                            <div class="col s12 m12 l6">
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 1</span>
+                                                    <input placeholder="Automotive" id="project-key1" type="text" />
+                                                </div>
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 2</span>
+                                                    <input placeholder="Varification" id="project-key2" type="text" />
+                                                </div>
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 3</span>
+                                                    <input placeholder="Distributed System" id="project-key3" type="text" />
+                                                </div>
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 4</span>
+                                                    <input placeholder="Database" id="project-key4" type="text" />
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s12 m4 l2">
+                                                <span class="fieldLabel">Year</span>
+                                                <input placeholder="2008" id="project-year" type="text" />
+								            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <span class="fieldLabel">Team Member 1</span>
+									           <input placeholder="Team Member" id="project-member1" type="text" />
+
+                                               <p ><span class="fieldLabel">Team Member 2</span>
+									           <input placeholder="Team Member" id="project-member2" type="text" /></p>
+                                            </div>
+
+                                            <div class="col s3">
+                                                <span class="fieldLabel">Team Member 3</span>
+									           <input placeholder="Team Member" id="project-member3" type="text" />
+                                               <p ><span class="fieldLabel">Team Member 4</span>
+									           <input placeholder="Team Member" id="project-member4" type="text" /></p>
+                                            </div>
+
+                                            <div class="col s3">
+                                                <span class="fieldLabel">Abstract</span>
+													<textarea id="project-abstract" placeholder="Enter your project's abstract" class="materialize-textarea" length="500"  maxlength="500" rows="6"></textarea>
+                                            </div>
+                                            <div class="col s3">
+                                                <br>
+                                                <br>
+                                                <form action="#">
+                                                    <div class="file-field input-field">
+
+                                                        <div class="waves-effect waves-light btn" id = "file-button">
+                                                            <i class="material-icons left">file_upload</i>
+                                                            <span> Upload</span>
+                                                        <input type="file" id="project-file">
+                                                        </div>
+
+                                                        <div class="file-path-wrapper">
+                                                            <input class="file-path validate" type="text">
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                        </div>
+
+                        <div class="col s12 m12 l12">
+                                <ul id="projectSuper-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+
+                                        <div class="col s12 m4 l9">
+                                             <i class="mdi-hardware-laptop-mac circle light-blue darken-2"></i>
+
+                                           <span class="collection-header">Projects (Student/Alumni)</span>
+
+                                            <p>Past and current projects</p>
+                                        </div>
+                                        <div class="col l3">
+                                            <div align = "right">
+                                                <a class="waves-effect waves-light btn" id = "addMoreProjectSupervisor">Add</a>
+                                            </div>
+                                        </div>
+
+
+
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+
+
+								            <div class="input-field col s12 m4 l6">
+                                                <span class="fieldLabel">Title</span>
+                                                <input placeholder="Verification Concept for Embedded Platforms" id="project1-title" type="text" />
+								            </div>
+                                            <div class="input-field col s12 m4 l3">
+                                                <span class="fieldLabel">Project Advisor</span>
+                                                <input placeholder="Rogers Walter" id="project1-title" type="text" />
+								            </div>
+                                            <div class="input-field col s12 m4 l3">
+                                                <span class="fieldLabel">Project Co-Advisor</span>
+                                                <input placeholder="Rogers Walter" id="project1-title" type="text" />
+								            </div>
+
+                                        </div>
+                                        <div class="row">
+
+
+
+                                            <div class="col s12 m12 l10">
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 1</span>
+                                                    <input placeholder="Automotive" id="proMember1" type="text" />
+                                                </div>
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 2</span>
+                                                    <input placeholder="Varification" id="proMember1" type="text" />
+                                                </div>
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 3</span>
+                                                    <input placeholder="Distributed System" id="proMember1" type="text" />
+                                                </div>
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 4</span>
+                                                    <input placeholder="Database" id="proMember1" type="text" />
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s12 m4 l2">
+                                                <span class="fieldLabel">Year</span>
+                                                <input placeholder="2008" id="proMember1" type="text" />
+								            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <span class="fieldLabel">Team Member 1</span>
+									           <input placeholder="Team Member" id="proMember1" type="text" />
+
+                                               <p ><span class="fieldLabel">Team Member 2</span>
+									           <input placeholder="Team Member" id="proMember1" type="text" /></p>
+                                            </div>
+
+                                            <div class="col s3">
+                                                <span class="fieldLabel">Team Member 3</span>
+									           <input placeholder="Team Member" id="proMember1" type="text" />
+                                               <p ><span class="fieldLabel">Team Member 4</span>
+									           <input placeholder="Team Member" id="proMember1" type="text" /></p>
+                                            </div>
+
+                                            <div class="col s3">
+                                                <span class="fieldLabel">Abstract</span>
+													<textarea id="project-abstract" placeholder="Enter your project's abstract" class="materialize-textarea" length="500"  maxlength="500" rows="6"></textarea>
+                                            </div>
+                                            <div class="col s3">
+                                                <br>
+                                                <br>
+                                                <form action="#">
+                                                    <div class="file-field input-field">
+
+                                                        <div class="waves-effect waves-light btn" id = "file-button">
+                                                            <i class="material-icons left">file_upload</i>
+                                                            <span> Upload</span>
+                                                        <input type="file">
+                                                        </div>
+
+                                                        <div class="file-path-wrapper">
+                                                            <input class="file-path validate" type="text">
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                        </div>
+
+
+                         <div class="col s12 m12 l12">
+                                <ul id="research-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+                                        <div class="col s12 m4 l9">
+                                            <i class="mdi-hardware-laptop-mac circle teal darken-2"></i>
+
+                                            <span class="collection-header">Research Funding(Staff)</span>
+                                            <p>Past and Current Researches</p>
+                                        </div>
+                                        <div class="col l3">
+                                            <div align = "right">
+                                                <a class="waves-effect waves-light btn" id = "addMoreResearch">Add</a>
+                                            </div>
+                                        </div>
+
+
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+
+                                            <div class="input-field col s12 m4 l3">
+                                                <span class="fieldLabel">Title</span>
+                                                <input placeholder="Verification Concept for Embedded Platforms" id="project1-title" type="text" />
+								            </div>
+
+                                            <div class="input-field col s12 m4 l2">
+                                                <span class="fieldLabel">Position</span>
+                                                <input placeholder="Principal Investigator" id="project1-title" type="text" />
+								            </div>
+                                            <div class="col s12 m12 l7">
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 1</span>
+                                                    <input placeholder="Automotive" id="proMember1" type="text" />
+                                                </div>
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 2</span>
+                                                    <input placeholder="Varification" id="proMember1" type="text" />
+                                                </div>
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 3</span>
+                                                    <input placeholder="Distributed System" id="proMember1" type="text" />
+                                                </div>
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 4</span>
+                                                    <input placeholder="Database" id="proMember1" type="text" />
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12 m4 l2">
+
+                                                <span class="fieldLabel">Funding Agency</span>
+                                                <input placeholder="CHIST-ERA" id="proMember1" type="text" />
+
+
+                                            </div>
+
+                                            <div class="input-field col s12 m4 l1">
+                                                <span class="fieldLabel">Year</span>
+                                                <input placeholder="2013" id="proMember1" type="text" />
+                                            </div>
+                                                   <div class="input-field col s12 m4 l2">
+                                                <span class="fieldLabel">Funding amount</span>
+                                                <input placeholder="$1000" id="proMember1" type="text" />
+                                            </div>
+
+
+                                            <div class="input-field col s12 m4 l3" id="researchMember1-div">
+                                                <span class="fieldLabel">Team Member</span>
+                                                <input placeholder="Walters Newmans" id="proMember1" type="text" />
+                                            </div>
+
+                                            <div class="input-field col s12 m4 l2" id="researchMemberRole1-div">
+                                                <span class="fieldLabel">Role</span>
+                                                <input placeholder="Sub-Investigator" id="proMember1" type="text" />
+                                            </div>
+
+
+                                            <div class = "input-field col s12 m4 l2">
+                                                 <a class="waves-effect waves-light btn" id = "addMoreResearchMember1"  onClick="addResearchMember(1)">Add</a>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s4 ">
+                                                <span class="fieldLabel">Abstract</span>
+													<textarea id="project-abstract" placeholder="Enter your project's abstract" class="materialize-textarea" length="500"  maxlength="500" rows="6"></textarea>
+                                            </div>
+                                             <div class="col s3">
+                                                <br>
+                                                <br>
+                                                <form action="#">
+                                                    <div class="file-field input-field">
+
+                                                        <div class="waves-effect waves-light btn" id = "file-button">
+                                                            <i class="material-icons left">file_upload</i>
+                                                            <span> Upload</span>
+                                                        <input type="file">
+                                                        </div>
+                                                        <div class="file-path-wrapper">
+                                                            <input class="file-path validate" type="text">
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div id="researchMember1-div">
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        <div class="col s12 m12 l12">
+                                <ul id="papers-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+                                        <div class="col s12 m4 l9">
+                                            <i class="mdi-action-description circle pink "></i>
+
+                                            <span class="collection-header">Papers (Staff/Alumni/Student)</span>
+                                            <p>Past and Current Papers</p>
+                                        </div>
+                                        <div class="col l3">
+                                            <div align = "right">
+                                                <a class="waves-effect waves-light btn" id = "addMorePaper">Add</a>
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+
+                                            <div class="input-field col s12 m4 l3">
+                                                <span class="fieldLabel">Title</span>
+                                                <input placeholder="Verification Concept for Embedded Platforms" id="project1-title" type="text" />
+								            </div>
+
+
+                                            <div class="col s12 m12 l7">
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 1</span>
+                                                    <input placeholder="Automotive" id="proMember1" type="text" />
+                                                </div>
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 2</span>
+                                                    <input placeholder="Varification" id="proMember1" type="text" />
+                                                </div>
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 3</span>
+                                                    <input placeholder="Distributed System" id="proMember1" type="text" />
+                                                </div>
+                                                <div class="input-field col s12 m4 l3">
+                                                    <span class="fieldLabel">Keyword 4</span>
+                                                    <input placeholder="Database" id="proMember1" type="text" />
+                                                </div>
+
+
+
+                                            </div>
+                                            <div class="input-field col s12 m4 l2">
+                                                <span class="fieldLabel">Year</span>
+                                                <input placeholder="2013" id="proMember1" type="text" />
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col s4 ">
+                                                <span class="fieldLabel">Abstract</span>
+													<textarea id="project-abstract" placeholder="Enter your project's abstract" class="materialize-textarea" length="500"  maxlength="500" rows="6"></textarea>
+                                            </div>
+
+                                            <div class="input-field col s12 m4 l3">
+
+                                                <span class="fieldLabel">Publisher</span>
+                                                <input placeholder="Academic and Scientific Publishing" id="proMember1" type="text" />
+
+
+                                            </div>
+
+                                                <div class="input-field col s12 m4 l3 " id="coAuthor1-div">
+                                                    <span class="fieldLabel">Co-Author</span>
+                                                   <input placeholder="Walters Newmans" id="proMember1" type="text" />
+
+
+                                                </div>
+
+
+
+                                            <div class = "input-field col s12 m4 l2">
+                                                 <a class="waves-effect waves-light btn" id = "addMoreAuthor1" onclick="addMoreAuthor(1)">Add</a>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+
+                                             <div class="col s4">
+
+                                                <form action="#">
+                                                    <div class="file-field input-field">
+
+                                                        <div class="waves-effect waves-light btn" id = "file-button">
+                                                            <i class="material-icons left">file_upload</i>
+                                                            <span> Upload</span>
+                                                        <input type="file">
+                                                        </div>
+                                                        <div class="file-path-wrapper">
+                                                            <input class="file-path validate" type="text">
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                             <div  id="paperCoAuthor1-div">
+
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+
+
+
+        <div class="col s12 m12 l12" align = "center">
+
+            <a class="waves-effect waves-light blue darken-1 btn modal-trigger" href="#modal1">Save</a>
+            <br>
+                        <br>
+
+        </div>
+
+
+            </div>
+
+
+	</div>
+
+        <div id="modal1" class="modal">
+              <div class="modal-content">
+                <h4>Welcome a new member!</h4>
+                <p>Your profile is saved successfully</p>
+              </div>
+              <div class="modal-footer">
+                <a href="../group-index/staff-index.html" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+
+              </div>
+        </div>
+
+	<div id="Section1" class="row" style="height:100%;  padding-top:4.7rem; display:none;">
+		<div class="content">
+      <div class="row">
+        <div class="col s12 m12 l6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Section 1</span>
+              <p>Section 1 content to go here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+	</div>
+
+	<div id="Section2" class="row" style="height:100%;  padding-top:4.7rem; display:none;">
+		<div class="content">
+      <div class="row">
+        <div class="col s12 m12 l6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Section 2 Content</span>
+              <p>Section 2 content to go here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+	</div>
+
+
+	<!-- Modal Structure -->
+
+
+
+		<!-- Modal Structure -->
+
+
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+
+
+    <script src="js/profileScript.js"></script>
+    <script>
+        document.getElementById('getval').addEventListener('change', readURL, true);
+function readURL(){
+    var file = document.getElementById("getval").files[0];
+    var reader = new FileReader();
+    reader.onloadend = function(){
+        document.getElementById('profile-upload').style.backgroundImage = "url(" + reader.result + ")";
+    }
+    if(file){
+        reader.readAsDataURL(file);
+    }else{
+    }
+    }
+
+    </script>
+{% endblock %}

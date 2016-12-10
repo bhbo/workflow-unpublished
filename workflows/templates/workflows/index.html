@@ -1,0 +1,87 @@
+{% extends 'workflows/base.html' %}
+{% block title %}Welcome {{ user.username }}! {% endblock %}
+{% block body %}
+    {% load staticfiles %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Main</title>
+    <!--REQUIRED STYLE SHEETS-->
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+    <!-- FONTAWESOME STYLE CSS -->
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" />
+    <!--ANIMATED FONTAWESOME STYLE CSS -->
+    <link href="{% static 'assets/css/font-awesome-animation.css' %}" rel="stylesheet" />
+       <!-- CUSTOM STYLE CSS -->
+    <link href=" {% static 'assets/css/style.css' %}" rel="stylesheet" />
+    <!-- GOOGLE FONT -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel='stylesheet' type='text/css'>
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+
+<style>
+  td{
+    border: 10px solid white;
+  }
+</style>
+
+<body >
+
+
+   <h2>Most Popular Apps</h2>
+   <!-- <div class="row">
+      <div class="boxbox" style="background-color:brown">
+          <ul class = "button">
+            <img src="image/Employee.png">
+              <h3>Employee Onbroading</h3>
+          </ul>
+      </div>
+      <div class="boxbox" style="background-color:lime">
+          <img src="image/Employee.png" >
+          <h3>Problem??</h3>
+
+      </div>
+    </div> -->
+    <div class= "row">
+    <table>
+      <tr>
+        <td width = "150" height = "150" bgcolor = "#93c47d" align="center"><a href="#1"><img src=" {% static 'image/Employee.png' %}"><h3>Job Application</h3></a></td>
+        <td width = "150" height = "150" bgcolor = "#78909c" align="center"><a href="#2"><img src=" {% static 'image/PalmTree.png' %}"><h3>Vacation Request</h3></a></td>
+        <td width = "150" height = "150" bgcolor = "#f7b600" align="center"><a href="#3"><img src=" {% static 'image/Cart.png' %}"><h3>Project Submitting</h3></a></td>
+        <td width = "150" height = "150" bgcolor = "#de445e" align="center"><a href="#4"><img src="{% static 'image/Trolley.png' %}"><h3>Business Meeting</h3></a></td>
+        <td width = "150" height = "150" bgcolor = "#0097a7" align="center"><a href="#5"><img src="{% static 'image/Receipt.png' %}"><h3>News Posting</h3></a></td>
+        <td width = "150" height = "150" bgcolor = "#93c47d" align="center"><a href="#6"><img src="{% static 'image/Bills.png' %}"><h3>Funding</h3></a></td>
+        <td width = "150" height = "150" bgcolor = "whitesmoke" align="center"><a href="{% url 'workflows:create' %}"><img src="{% static 'image/Plus.png' %}"><h4>Create your own App</h4></a></td>
+      </tr>
+    </table>
+  </div>
+      <br>
+      <button class = "button">SHOW MORE</button>
+      <br>
+
+
+
+
+
+
+
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY  -->
+    <script src="{% static 'assets/plugins/jquery-1.10.2.js' %}"></script>
+    <!-- BOOTSTRAP CORE SCRIPT   -->
+    <script src="{% static 'assets/plugins/bootstrap.js' %}"></script>
+
+    <!-- CUSTOM SCRIPTS -->
+    <script src="{%static 'assets/js/custom.js' %}"></script>
+
+</body>
+
+
+{% endblock %}

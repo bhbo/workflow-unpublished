@@ -1,0 +1,199 @@
+ <!-- FlatFy Theme - Andrea Galanti /-->
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Flatfy Free Flat and Responsive HTML5 Template ">
+    <meta name="author" content="">
+
+    <title>Workflows – An automate workflows engine for everyone!</title>
+
+    {% load staticfiles %}
+    <link rel="shortcut icon" type="image/png" href="{%  static 'favicon.ico' %}"/>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom Google Web Font -->
+    <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom CSS-->
+     <link href="{% static 'css/general.css' %}" rel="stylesheet">
+
+	 <!-- Owl-Carousel -->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+	<link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.theme.css' %}" rel="stylesheet">
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'css/animate.css' %}" rel="stylesheet">
+
+	<!-- Magnific Popup core CSS file -->
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+	<script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>  
+    <!-- Modernizr /-->  <!-- Modernizr /-->
+	<!--[if IE 9]>
+		<script src="js/PIE_IE9.js"></script>
+	<![endif]-->
+	<!--[if lt IE 9]>
+		<script src="js/PIE_IE678.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+	<![endif]-->
+
+
+    <style>
+
+.navbar-default
+{
+   position: fixed;
+   top: 0px;
+}
+
+    </style>
+
+</head>
+
+<body id="home">
+
+	<!-- Preloader -->
+	<div id="preloader">
+		<div id="status"></div>
+	</div>
+
+	<!-- NavBar-->
+	<nav class="navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="{% url 'workflows:register' %}">{% block title %}Workflows Engine{% endblock %}</a>
+			</div>
+
+			<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+
+					<li class="menuItem"><a href="#whatis">What is?</a></li>
+                    <li class="menuItem"><a href="#useit">Use It</a></li>
+					<li class="menuItem"><a href="{% url 'workflows:logout_user' %}">Logout</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+
+
+
+
+	<!-- FullScreen -->
+   {% block body %}
+	{% endblock %}
+
+
+
+	<!-- Banner Download -->
+	<!--
+
+	<div id="downloadlink" class="banner">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+				<h2>Download Free</h2>
+				<p class="lead" style="margin-top:0">Pay with a Tweet</p>
+				<p><a class="btn btn-embossed btn-primary view" role="button">Free Download</a></p>
+			 </div>
+			</div>
+		</div>
+	</div>
+	-->
+
+    <footer>
+
+      <div class="container">
+        <div class="row">
+
+            <!--
+          <div class="col-md-7">
+
+
+            <h3 class="footer-title">Follow Me!</h3>
+            <p>Vuoi ricevere news su altri template?<br/>
+              Visita Andrea Galanti.it e vedrai tutte le news riguardanti nuovi Theme!<br/>
+              Go to: <a  href="http://andreagalanti.it" target="_blank">andreagalanti.it</a>
+            </p>
+
+
+			<a rel="cc:attributionURL" href="http://www.andreagalanti.it/flatfy"
+		   property="dc:title">Flatfy Theme </a> by
+		   <a rel="dc:creator" href="http://www.andreagalanti.it"
+		   property="cc:attributionName">Andrea Galanti</a>
+		   is licensed to the public under
+		   <BR>the <a rel="license"
+		   href="http://creativecommons.org/licenses/by-nc/3.0/it/deed.it">Creative
+		   Commons Attribution 3.0 License - NOT COMMERCIAL</a>.
+
+
+          </div>
+            -->
+
+          <div class="col-md-5">
+            <div class="footer-banner">
+              <h3 class="footer-title">TEAM</h3>
+              <ul>
+
+                <li>Jirapa L.</li>
+                <li>Pimpisa W.</li>
+                <li>Chusanart P</li>
+                <li>Lorem Ipsum</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{% static 'js/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+	<script src="{% static 'js/owl.carousel.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
+	<!-- StikyMenu -->
+	<script src="{% static 'js/stickUp.min.js' %}"></script>
+
+	<script type="text/javascript">
+	  jQuery(function($) {
+		$(document).ready( function() {
+		  $('.navbar-default').stickUp();
+
+		});
+	  });
+	</script>
+
+
+	<!-- Smoothscroll -->
+	<script type="text/javascript" src="{% static 'js/jquery.corner.js' %}"></script>
+	<script src="{% static 'js/wow.min.js' %}"></script>
+	<script>
+	 new WOW().init();
+	</script>
+	<script src="{% static 'js/classie.js' %}"></script>
+	<script src="{% static 'js/uiMorphingButton_inflow.js' %}"></script>
+	<!-- Magnific Popup core JS file -->
+	<script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+</body>
+<!---->
+</html>
