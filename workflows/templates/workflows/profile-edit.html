@@ -1,24 +1,12 @@
 {% extends 'workflows/base_visitor.html' %}
- {% load staticfiles %}
-<head>
-      <!--Import Google Icon Font-->
-
-      <!--Import materialize.css-->
-<link rel="stylesheet" href=" {% static 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css' %} ">
-
-<link rel="stylesheet" href=" {% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css' %} ">
-
-
-
-
-<!--Let browser know website is optimized for mobile-->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-</head>
-
+{% load staticfiles %}
 
 {% block body %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="{% static 'css/profile-viewStyleSheet.css' %}" rel="stylesheet">
 
 	<div id="FormSection" class="row" style="height:100%; padding-top:2.7rem">
 		<!-- side nav section -->
@@ -28,32 +16,37 @@
 
                     <div id="work-collections">
 
+
+                         <form role="form" action="{% url 'workflows:register_user'%}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
                                <div class="col s12 m6 l6">
                                 <ul id="profile-collection" class="collection">
                                     <br>
+
                                     <li class="collection-item avatar">
                                         <div class="col s12 m4 l2">
                                             <div id='profile-upload'>
-                                                <div class="hvr-profile-img"><input type="file" name="logo" id='getval'  class="upload w180" title="Upload your profile picture" id="imag"></div>
+                                                <div class="hvr-profile-img"><input type="file" name="profileLogo" id='getval'  class="upload w180" title="Upload your profile picture" id="imag"></div>
                                                 <i class="fa fa-camera"></i>
                                             </div>
                                         </div>
                                         <div class="col s12 m4 l9">
-                                            <span class="collection-header">Profile(Shared)</span>
+                                            <span class="collection-header">Profile(Shared)test</span>
                                             <p>Personal and Contact Information</p>
                                         </div>
 
                                     </li>
+
                                     <li class="collection-item">
                                     <div class="row">
 
                                     <div class="input-field col s12 m4 l3">
                                     <br>
-									<select class = "browser-default" id="userType">
-                                        <option value="" disabled  selected>Who you are</option>
-                                        <option value="1">Academic Staff</option>
-                                        <option value="2">Student</option>
-                                        <option value="3">Alumni</option>
+									<select class = "browser-default" id="userType" name = "userType">
+                                        <option value=""disabled  selected>Who you are</option>
+                                        <option value="Academic Staff">Academic Staff</option>
+                                        <option value="Student">Student</option>
+                                        <option value="Alumni">Alumni</option>
 
                                     </select>
                                     <!--<label>Title</label>-->
@@ -61,31 +54,32 @@
 
                                     <div class="input-field col s12 m4 l2">
                                     <br>
-									<select class = "browser-default" id="title">
+									<select class = "browser-default" id="title" name = "tittle">
                                         <option value="" disabled  selected>Title</option>
-                                        <option value="1">Mr.</option>
-                                        <option value="2">Mrs.</option>
-                                        <option value="3">Ms.</option>
-                                        <option value="4">Miss</option>
+                                        <option value="Mr.">Mr.</option>
+                                        <option value="Mrs.">Mrs.</option>
+                                        <option value="Ms">Ms.</option>
+                                        <option value="Miss">Miss</option>
 
-                                        <option value="5">Dr.</option>
-                                         <option value="6">Asst. Prof.</option>
-                                        <option value="7">Assoc. Prof.</option>
-                                        <option value="8">Prof.</option>
-                                        <option value="9">Asst. Prof. Dr.</option>
-                                        <option value="10">Assoc. Prof. Dr.</option>
-                                        <option value="11">Prof. Dr.</option>
+                                        <option value="Dr.">Dr.</option>
+                                        <option value="Asst. Prof.">Asst. Prof.</option>
+                                        <option value="Assoc. Prof.">Assoc. Prof.</option>
+                                        <option value="Prof.">Prof.</option>
+                                        <option value="Asst. Prof. Dr.">Asst. Prof. Dr.</option>
+                                        <option value="Assoc. Prof. Dr.">Assoc. Prof. Dr.</option>
+                                        <option value="Prof. Dr.">Prof. Dr.</option>
                                     </select>
                                     <!--<label>Title</label>-->
 								    </div>
+
 								<div class="input-field col s12 m4 l3">
 									<span class="fieldLabel">First Name</span>
-									<input placeholder="First Name" id="firstName" type="text" />
+									<input placeholder="First Name" id="firstName" name = "firstName"type="text"  width="48" />
 								</div>
 
 								<div class="input-field col s12 m4 l4">
 									<span class="fieldLabel">Last Name</span>
-									<input placeholder="Last Name" id="lastName" type="text" />
+									<input placeholder="Last Name" id="lastName" name = "lastName" type="text" />
 								</div>
 
 
@@ -94,18 +88,18 @@
 
                                 <div class="row">
 
-                                    <div class="input-field col s12 m4 l3">
+                                    <div class="input-field col s12 m7 l5">
 									<span class="fieldLabel">Date Of Birth</span>
-									<input id="DOB" type="date" class="datepicker" /placeholder="19/12/1988">
+									<input id="DOB" name = "dateOfBirth" type="date" class="datepicker" /placeholder="19/12/1988">
 								</div>
 
 
 
 
-								<div class="input-field col s4">
+								<div class="input-field col s12 m7">
                                     <span class="fieldLabel">Department</span>
 
-                                        <select class = "browser-default" id="department">
+                                        <select class = "browser-default" id="department" name = "department">
                                             <option value="" disabled selected>Choose your option</option>
                                             <option value="1">Telecommunications Engineering</option>
                                             <option value="2">Electrical Engineering</option>
@@ -120,38 +114,33 @@
 
 
                                         </select>
-                                            </div>
-                                    <div class="input-field col s12 m4 l5">
-									<span class="fieldLabel">LinkedIn or Social Network</span>
-									<input placeholder="facebook.com/mafte.s" id="tel" type="text" />
-								</div>
+                                </div>
+
                                 </div>
 
                                 <div class="row">
 								<div class="input-field col s12 m6 l6">
 									<span class="fieldLabel">Mobile</span>
-									<input placeholder="081-234-5678" id="tel" type="text" />
+									<input placeholder="081-234-5678" id="tel" type="text" name="mobile">
 								</div>
 								<div class="input-field col s12 m6 l6">
 									<span class="fieldLabel">Email</span>
-									<input placeholder="john.d@mail.com" id="email" type="email" class="validate">
+									<input placeholder="john.d@mail.com" id="email" type="email" class="validate" name="email">
 								</div>
+                                </div>
 
-                                        </div>
-
-                                          <div class="row">
+                                <div class="row">
 								<div class="input-field col s12 m6 l6">
 									<span class="fieldLabel">Loop ID</span>
-									<input placeholder="081-234-5678" id="tel" type="text" />
+									<input placeholder="ID" id="tel" name = "loopId" type="text" />
 								</div>
+
 								<div class="input-field col s12 m6 l6">
 									<span class="fieldLabel">Facebook name</span>
-									<input placeholder="john.d@mail.com" id="email" type="email" class="validate">
+									<input placeholder="john.d@mail.com" id="email" type="email" class="validate" name = "facebookAddress">
 								</div>
 
-
-
-                                    </li>
+                                 </li>
 
 
 
@@ -159,6 +148,17 @@
 
 
                             </div>
+
+                               <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+
+
+                         </form>
+
+
 
                             <div class="col s12 m12 l6">
                                 <ul id="address-collection" class="collection">

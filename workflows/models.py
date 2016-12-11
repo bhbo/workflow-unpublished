@@ -1,111 +1,71 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.contrib.auth.models import User
+
 
 # Create your models here.
-from django.contrib.auth.models import User
 from django.db import models
 
+"""
+class Arc(models.Model):
 
-'''
+    connected_node = Node()
+    def action(self):
+        return "do something"
 
-class State(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=100)
-    executingWorkflowID = models.ForeignKey('ExecutingWorkflow')
-    nextFlowObject = models.ForeignKey('self')
-    def run(self):
-        return self.nextActivity.connectedNode.name
-
-class Event(State):
-    def notify(self,user,message):
-
-        return user,": get notified,",message
-
-class Activity (State):
-    action = models.TextField()
-    activityHolder = models.ForeignKey('User', default=1)
-
-class Gateway(State):
-
-    incoming =
+class Node(models.Model):
+    title = models.CharField(max_length=100)
+    arc = Arc()
 
 
-class ExecutingWorkflow(models.Model):
-    id = models.AutoField(primary_key=True)
-    form = models.ForeignKey('WorkflowForm')
-    start = models.ForeignKey('Event')
-    executor = models.ForeignKey('User', default=1)
-    creator = models.ForeignKey('User', default=1)
+"""
 
 
-    class Meta:
-        db_table = "WorkflowInstance"
+class StudentModel(models.Model):
 
-class WorkflowForm(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
-    xml = models.TextField()
-    status = models.BooleanField()
-    start = models.ForeignKey('Event')
-
-    class Meta:
-        db_table = "Workflow"
-
-'''
-
-
-class FlowObject(models.Model):
-
-    id = models.CharField(max_length=100,primary_key=True)
-    name = models.CharField(max_length=100 ,default="")
-    status = models.BooleanField()
-    def run(self):
-        return self.name
-
-class Event(FlowObject):
-    def notify(self,message):
-        return "notifying,",message
-
-class StartEvent(Event):
-    def notify(self):
-        return "start event"
-
-class EndEvent(Event):
-    def notify(self):
-        return "end event"
-class Gateway (FlowObject):
-    def notify(self):
-        return "gateway"
-
-class SequenceFlow(models.Model):
-    id = models.CharField(max_length=100,primary_key=True)
-    name = models.CharField(max_length=100, default=None)
-    source = models.ForeignKey(FlowObject,related_name='source_ref')
-    target = models.ForeignKey(FlowObject,related_name='terget_ref')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    profileLogo = models.FileField(default='')
+    tittle = models.CharField(max_length=50,default='')
+    userType = models.CharField(max_length=50, default='')
+    firstName = models.CharField(max_length=100)
+    lastName = models.CharField(max_length=100)
+    dateOfBirth = models.CharField(max_length=50)
+    department = models.CharField(max_length=50, default='')
+    mobile = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
+    loopId = models.CharField(max_length=50,default='')
+    facebookAddress = models.CharField(max_length=100)
 
 
+    def __unicode__(self):
+        return self.firstName
 
 
-class WorkflowTemplate(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
-    xml = models.TextField(default='')
-    status = models.CharField(max_length=100,default="Unpublished")
-    start = models.ForeignKey(StartEvent,default=StartEvent.DEFAULT_PK)
-    creator = models.ManyToManyField(User)
+class StaffModel(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    profileLogo = models.FileField(default='')
+    tittle = models.CharField(max_length=50,default='')
+    userType = models.CharField(max_length=50, default='')
+    firstName = models.CharField(max_length=100)
+    lastName = models.CharField(max_length=100)
+    dateOfBirth = models.CharField(max_length=50)
+    department = models.CharField(max_length=50, default='')
+    mobile = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
+    loopId = models.CharField(max_length=50,default='')
+    facebookAddress = models.CharField(max_length=100)
 
-class ExecutingWorkflow(models.Model):
-    id = models.AutoField(primary_key=True)
-    template = models.ForeignKey(WorkflowTemplate, on_delete=models.CASCADE)
-    start = models.ForeignKey(Event)
-    executor = models.ForeignKey(User)
-
-
-
-
-
-
-
+class AlumniModel(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    profileLogo = models.FileField(default='')
+    tittle = models.CharField(max_length=50,default='')
+    userType = models.CharField(max_length=50, default='')
+    firstName = models.CharField(max_length=100)
+    lastName = models.CharField(max_length=100)
+    dateOfBirth = models.CharField(max_length=50)
+    department = models.CharField(max_length=50, default='')
+    mobile = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
+    loopId = models.CharField(max_length=50,default='')
+    facebookAddress = models.CharField(max_length=100)

@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django import forms
-from workflows.models import *
+
+from .models import *
 
 
 class UserForm(forms.ModelForm):
@@ -10,10 +11,10 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ['username', 'email', 'password']
 
-'''
+
 class StudentForm(forms.ModelForm):
     class Meta:
-        model = WorkflowForm
+        model = StudentModel
 
         fields = ['profileLogo',
                   'userType',
@@ -27,13 +28,3 @@ class StudentForm(forms.ModelForm):
                   'loopId',
                   'facebookAddress',
                   ]
-
-'''
-class WorkflowTemplateForm(forms.ModelForm):
-    class Meta:
-        model = WorkflowTemplate
-
-        fields = ['name',
-                  'description'
-
-                ]

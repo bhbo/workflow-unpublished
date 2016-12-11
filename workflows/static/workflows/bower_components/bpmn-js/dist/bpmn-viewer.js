@@ -465,14 +465,7 @@ var PoweredBy = _dereq_(14),
 function addProjectLogo(container) {
   var logoData = PoweredBy.BPMNIO_LOGO;
 
-  var linkMarkup =
-    '<a href="http://bpmn.io" ' +
-       'target="_blank" ' +
-       'class="bjs-powered-by" ' +
-       'title="Powered by bpmn.io" ' +
-       'style="position: absolute; bottom: 15px; right: 15px; z-index: 100">' +
-        '<img src="data:image/png;base64,' + logoData + '">' +
-    '</a>';
+
 
   var linkElement = domify(linkMarkup);
 

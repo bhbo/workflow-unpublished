@@ -1,0 +1,494 @@
+{% extends 'workflows/base.html' %}
+{% block title %}Welcome {{ user.username }}! {% endblock %}
+{% block body %}
+    {% load staticfiles %}
+
+<body>
+
+<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile-viewStyleSheet.css' %}">
+
+    <div id="FormSection" class="row" style="height:100%; padding-top:2.7rem">
+		<!-- side nav section -->
+<br>
+<br>
+        <div class="container">
+                    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+
+
+                    <div id="work-collections">
+                        <div class="row">
+                           <div class="col s12 m6 l4">
+                                <div id="profile-card" class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+
+
+
+
+
+
+
+                                        <img class="activator" src="http://demo.geekslabs.com/materialize/v2.1/layout03/images/user-bg.jpg" alt="user background">
+                                    </div>
+
+
+                                    <!-- USer profile card containner -->
+
+                                    <div class="card-content">
+                                        <img src="../avatar.jpg" alt="" class="circle responsive-img activator card-profile-image">
+                                        <a class="btn-floating activator btn-move-up waves-effect waves-light darken-2 right">
+                                            <i class="large material-icons">toc</i>
+                                        </a>
+
+
+                                        <span class="card-title activator grey-text text-darken-4">{{ user.username }} </span>
+
+
+                                        <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Bachelor's Degree Year 3</p>
+                                        <p><i class="mdi-content-content-paste cyan-text text-darken-2"></i> {{ student.firstName  }} </p>
+                                        <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i> +1 (612) 222 8989</p>
+                                        <p><i class="mdi-communication-email cyan-text text-darken-2"></i> {{ user.email }} </p>
+
+                                    </div>
+
+                                    <!------------------------------------->
+
+
+
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4">Jessica Rogers<i class="mdi-navigation-close right"></i></span>
+                                        <p>Here is some more information about this card.</p>
+                                        <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Project Manager</p>
+                                        <p><i class="mdi-action-wallet-travel cyan-text text-darken-2"></i> Bangkok, Thailand</p>
+                                        <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i> +1 (612) 222 8989</p>
+                                        <p><i class="mdi-communication-email cyan-text text-darken-2"></i> mail@domain.com</p>
+                                        <p><i class="mdi-social-cake cyan-text text-darken-2"></i> 18th June 1990</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m12 l8">
+                                <ul id="projects-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+                                        <i class="mdi-social-school circle light-blue darken-2"></i>
+
+                                        <span class="collection-header">Education Background</span>
+                                        <p>1999-2011</p>
+
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s6">
+                                                <p class="collections-title">ABC Demonstration School</p>
+                                                <p class="collections-content">High School</p>
+                                            </div>
+
+                                            <div class="col s3">
+                                                <br>
+                                                1999-2005
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s6">
+                                                <p class="collections-title">First Technology College of Bangkok</p>
+                                                <p class="collections-content">Bachelor's Degree</p>
+                                            </div>
+
+                                            <div class="col s3">
+                                                <br>
+                                                2005 - 2010
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s6">
+                                                <p class="collections-title">Webster College</p>
+                                                <p class="collections-content">Master's Degree</p>
+                                            </div>
+
+                                            <div class="col s3">
+                                                 <br>
+                                                2012-2015
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s6">
+                                                <p class="collections-title">AdWord Institute of London</p>
+                                                <p class="collections-content">True Line</p>
+                                            </div>
+
+                                            <div class="col s3">
+
+                                                 <br>
+                                                2015-2016
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                            <div class="col s12 m12 l6">
+                                <ul id="projects-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+
+                                        <i class="mdi-image-tune circle red darken-2"></i>
+                                       <span class="collection-header">Academic Information</span>
+                                        <p>and interests</p>
+
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <p class="collections-title">Favorite Subjects</p>
+                                                <p class="collections-content">Master's Degree</p>
+                                            </div>
+
+                                            <div class="col s9">
+                                                 <div class="chip light-blue darken-1">
+                                                    Database Systems
+                                                </div>
+                                                <div class="chip light-blue darken-1">
+                                                    Mathematics 2
+                                                </div>
+                                                <div class="chip light-blue darken-1">
+                                                    Computer Network
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <p class="collections-title">Research Interests</p>
+                                                <p class="collections-content">Area of Interests </p>
+                                            </div>
+                                            <div class="col s9">
+
+                                                <div class="chip pink lighten-1 ">
+                                                    Computer Network
+                                                </div>
+                                                <div class="chip pink lighten-1 ">
+                                                    Computer Network
+                                                </div>
+                                                <div class="chip pink lighten-1 ">
+                                                    Computer Network
+                                                </div>
+                                                <div class="chip pink lighten-1 ">
+                                                    Computer Network
+                                                </div>
+                                                <div class="chip pink lighten-1 ">
+                                                    Computer Network
+                                                </div>
+                                                <div class="chip pink lighten-1 ">
+                                                    Computer Network
+                                                </div>
+                                                <div class="chip pink lighten-1 ">
+                                                    Computer Network
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        <div class="col s12 m12 l6">
+                                <ul id="projects-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+
+                                        <i class="mdi-file-folder circle green darken-2"></i>
+
+                                       <span class="collection-header">Personal Information</span>
+                                        <p>all about yourself</p>
+
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s6">
+                                                <p class="collections-title">
+                                                    Thai, English and Japanese
+                                                    <p class="collections-content">Language Skills</p>
+
+
+                                            </div>
+                                            <div class="col s4">
+                                                Badminton, Ice Skating and Table tennis
+                                                <p class="collections-content">Sports</p>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s6">
+                                                <p class="collections-title">
+                                                    Puzzle, Reading and Painting
+                                                    <p class="collections-content">Hobbies</p>
+
+                                            </div>
+                                            <div class="col s4">
+                                                Reading Books
+                                                <p class="collections-content"></p>
+                                            </div>
+
+                                        </div>
+
+
+                                    </li>
+                                    <li class="collection-item">
+                                       <div class="row">
+                                            <div class="col s6">
+                                                <p class="collections-title">
+                                                    Fundamental of Electrical
+                                                    <p class="collections-content">Subject</p>
+
+                                            </div>
+                                            <div class="col s4">
+                                                Electrical Engineering
+                                                <p class="collections-content">Program</p>
+                                            </div>
+
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        <div class="col s12 m12 l12">
+                                <ul id="projects-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+                                        <i class="mdi-hardware-laptop-mac circle light-blue darken-2"></i>
+
+                                        <span class="collection-header">Project</span>
+                                        <p>Past and Current Projects </p>
+
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <p class="collections-title"> Verification Concept for Embedded Platforms</p>
+                                                <p class="collections-content">Title</p>
+
+                                            </div>
+                                            <div class="col s3">
+                                                <p class="collections-title"> Asst.Prof.Dr.Suchard Kittithammarat</p>
+                                                <p class="collections-content">Project Advisor</p>
+
+                                            </div>
+                                            <div class="col s3">
+                                                <p class="collections-title">Dr.Robert Moore</p>
+                                                <p class="collections-content">Project Co-Advisor</p>
+
+                                            </div>
+
+
+
+
+                                        </div>
+                                        <div class="row">
+
+
+                                            <div class="col s5">
+                                                <p class="collections-title">Operation Systems, Varification, Embedded Systems</p>
+                                                <p class="collections-content">Keywords</p>
+                                            </div>
+                                            <div class="col s3">
+                                                <p class="collections-title"> 2014</p>
+                                                <p class="collections-content">Year </p>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s5"> <p class="collections-title">1. Miranda	Gonzales, 2. Walters Newmans </p>
+                                               <p class="collections-content">Member</p>
+                                            </div>
+
+                                            <div class="col s5">
+                                                <p class="collections-title">Development of concepts and adaption of verification tools to provide formal verification of device drivers for a particular embedded platform.</p>
+                                                <p class="collections-content">Abstract</p>
+                                            </div>
+                                            <div class="col s2">
+                                                <a href="https://swt.informatik.uni-freiburg.de/teaching/student-projects/available/DriverVerificationConcept/arm9_static_driver_verif-20091208-1.pdf">arm9_static_driver_verif-20091208-1.pdf</a>
+                                                <p class="collections-content">Project File </p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+
+                        <div class="col s12 m12 l12">
+                                <ul id="projects-collection" class="collection">
+                                    <br>
+                                    <li class="collection-item avatar">
+                                        <i class="mdi-action-description circle pink "></i>
+
+                                        <span class="collection-header">Papers</span>
+                                        <p>Assigned to you</p>
+
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s4">
+                                                <p class="collections-title"> Verification Concept for Embedded Platforms</p>
+                                                <p class="collections-content">3rd Year Project</p>
+                                            </div>
+
+
+                                            <div class="col s4">
+                                                <p class="collections-title">Operation Systems, Varification, Embedded Systems</p>
+                                                <p class="collections-content">Keywords</p>
+                                            </div>
+                                            <div class="col s1">
+                                                <p class="collections-title"> 2014</p>
+                                                <p class="collections-content">Year </p>
+                                            </div>
+                                            <div class="col s3">
+                                                <p class="collections-title"> Academic and Scientific Publishing</p>
+                                                <p class="collections-content">Publication </p>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s4"> <p class="collections-title">1. Miranda	Gonzales, 2. Walters Newmans </p>
+                                               <p class="collections-content">Co-Atuhor</p>
+                                            </div>
+
+                                            <div class="col s4">
+                                                <p class="collections-title">Development of concepts and adaption of verification tools to provide formal verification of device drivers for a particular embedded platform.</p>
+                                                <p class="collections-content">Abstract</p>
+                                            </div>
+                                            <div class="col s3">
+                                                <a href="https://swt.informatik.uni-freiburg.de/teaching/student-projects/available/DriverVerificationConcept/arm9_static_driver_verif-20091208-1.pdf">arm9_static_driver_verif-20091208-1.pdf</a>
+                                                <p class="collections-content">Project File </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                   <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s4">
+                                                <p class="collections-title"> Verification Concept for Embedded Platforms</p>
+                                                <p class="collections-content">3rd Year Project</p>
+                                            </div>
+
+
+                                            <div class="col s4">
+                                                <p class="collections-title">Operation Systems, Varification, Embedded Systems</p>
+                                                <p class="collections-content">Keywords</p>
+                                            </div>
+                                            <div class="col s1">
+                                                <p class="collections-title"> 2014</p>
+                                                <p class="collections-content">Year </p>
+                                            </div>
+                                            <div class="col s3">
+                                                <p class="collections-title"> Academic and Scientific Publishing</p>
+                                                <p class="collections-content">Publication </p>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s4"> <p class="collections-title">1. Miranda	Gonzales, 2. Walters Newmans </p>
+                                               <p class="collections-content">Co-Atuhor</p>
+                                            </div>
+
+                                            <div class="col s4">
+                                                <p class="collections-title">Development of concepts and adaption of verification tools to provide formal verification of device drivers for a particular embedded platform.</p>
+                                                <p class="collections-content">Abstract</p>
+                                            </div>
+                                            <div class="col s3">
+                                                <a href="https://swt.informatik.uni-freiburg.de/teaching/student-projects/available/DriverVerificationConcept/arm9_static_driver_verif-20091208-1.pdf">arm9_static_driver_verif-20091208-1.pdf</a>
+                                                <p class="collections-content">Project File </p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+	</div>
+
+	<div id="Section1" class="row" style="height:100%;  padding-top:4.7rem; display:none;">
+		<div class="content">
+      <div class="row">
+        <div class="col s12 m12 l6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Section 1</span>
+              <p>Section 1 content to go here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+	</div>
+
+	<div id="Section2" class="row" style="height:100%;  padding-top:4.7rem; display:none;">
+		<div class="content">
+      <div class="row">
+        <div class="col s12 m12 l6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Section 2 Content</span>
+              <p>Section 2 content to go here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+	</div>
+
+
+	<!-- Modal Structure -->
+
+
+
+		<!-- Modal Structure -->
+
+
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <script src="{% static '../js/profileScript.js'%}"></script>
+
+</body>
+{% endblock %}

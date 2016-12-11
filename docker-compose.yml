@@ -3,7 +3,7 @@
    db:
      image: postgres
      ports:
-       - "5432:5432"
+       - "5432"
      volumes:
        - /var/lib/postgresql/data
    web:
