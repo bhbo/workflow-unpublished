@@ -13,12 +13,10 @@
       padding: 0;
     }
 
-    #save-button {
+    #saveXML-button {
       position: absolute;
-      top: 20px;
+      bottom: 50px;
       right: 20px;
-
-      border: solid 5px green;
     }
 
       #download-button {
@@ -50,12 +48,13 @@
   <!-- element to draw bpmn diagram in -->
   <div id="canvas"></div>
 
-  <button id="save-button">Save Diagram</button>
-  <button id="download-button" type="submit" class="btn btn-primary">Download XML</button>
 
+  <button id="download-button" type="submit" class="btn btn-primary">Download XML</button>
+    <button id="saveXML-button" type="submit" class="btn btn-primary">Save</button>
   <!-- scripts -->
 
   <!-- bpmn-js modeler -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src=" {% static 'workflows/bower_components/bpmn-js/dist/bpmn-modeler.js' %} "></script>
 
   <!-- application -->

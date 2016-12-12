@@ -10,9 +10,13 @@ urlpatterns = [
     url(r'^logout_user/$', views.logout_user, name='logout_user'),
     url(r'^create/$', views.create, name='create'),
     url(r'^modeler/$', views.modeler, name='modeler'),
+    url(r'^create/modeler/$', views.saveXML, name='saveXML'),
     url(r'^profileedit/$', views.profileEdit, name = 'profileedit'),
     url(r'^register_user/$', views.register_user, name='register_user'),
     url(r'^view_profile/$', views.view_profile, name='view_profile'),
     url(r'^profileDetail/$', views.profileDetail, name='profileDetail'),
+    url(r'^job/$', views.job, name='job'),
+    url(r'^announce/$', views.announce, name='announce'),
+    url(r'^funding/$', views.funding, name='funding'),
 
 ]

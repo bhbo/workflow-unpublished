@@ -28,3 +28,12 @@ class StudentForm(forms.ModelForm):
                   'loopId',
                   'facebookAddress',
                   ]
+
+class WorkflowTemplateForm(forms.ModelForm):
+    class Meta:
+        model = WorkflowTemplate
+
+        fields = ['name',
+                  'description'
+
+                ]
