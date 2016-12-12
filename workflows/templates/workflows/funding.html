@@ -1,0 +1,59 @@
+{% extends 'workflows/base.html' %}
+{% block title %}Welcome {{ user.username }}! {% endblock %}
+{% block body %}
+
+
+    {% load staticfiles %}
+
+
+
+     <style type="text/css">
+    html, body, #canvas {
+      height: 100%;
+      padding: 0;
+    }
+
+    #save-button {
+      position: absolute;
+      top: 150px;
+      right: 20px;
+
+      border: solid 5px green;
+    }
+
+      #download-button {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+
+          border: solid 5px blue;
+      }
+
+
+
+         body{
+            padding-top: 65px;
+        }
+  </style>
+
+
+  <link rel="stylesheet" href=" {% static 'workflows/bower_components/bpmn-js/dist/assets/diagram-js.css' %} ">
+  <link rel="stylesheet" href=" {% static 'workflows/bower_components/bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css' %} ">
+
+
+    <a href="https://github.com/eligrey/FileSaver.js/blob/master/FileSaver.js" target="_blank"></a>
+  <!-- element to draw bpmn diagram in -->
+  <div id="canvas"></div>
+
+  <!-- <button id="save-button">Save Diagram as Image</button> -->
+  <button id="download-button" type="submit" class="btn btn-primary">Download XML</button>
+
+  <!-- scripts -->
+
+  <!-- bpmn-js modeler -->
+  <script src=" {% static 'workflows/bower_components/bpmn-js/dist/bpmn-modeler.js' %} "></script>
+
+  <!-- application -->
+  <script src=" {% static 'workflows/funding.js' %} "></script>
+
+{% endblock %}

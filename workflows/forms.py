@@ -28,3 +28,8 @@ class StudentForm(forms.ModelForm):
                   'loopId',
                   'facebookAddress',
                   ]
+
+    def __init__(self, *args, **kwargs):
+        super(StudentForm, self).__init__(*args, **kwargs)
+        self.fields['loopId'].required = False
+        self.fields['profileLogo'].required = False

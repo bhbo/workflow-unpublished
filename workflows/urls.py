@@ -1,5 +1,7 @@
 from django.conf.urls import url
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 app_name = 'workflows'
 urlpatterns = [
@@ -14,5 +16,10 @@ urlpatterns = [
     url(r'^register_user/$', views.register_user, name='register_user'),
     url(r'^view_profile/$', views.view_profile, name='view_profile'),
     url(r'^profileDetail/$', views.profileDetail, name='profileDetail'),
+    url(r'^job/$', views.job, name='job'),
+    url(r'^announce/$', views.announce, name='announce'),
+    url(r'^funding/$', views.funding, name='funding'),
 
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
