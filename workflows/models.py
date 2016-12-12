@@ -56,6 +56,7 @@ class StaffModel(models.Model):
     loopId = models.CharField(max_length=50,default='')
     facebookAddress = models.CharField(max_length=100)
 
+
 class AlumniModel(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     profileLogo = models.FileField(default='')
@@ -69,3 +70,14 @@ class AlumniModel(models.Model):
     email = models.EmailField(max_length=50)
     loopId = models.CharField(max_length=50,default='')
     facebookAddress = models.CharField(max_length=100)
+
+
+class WorkflowTemplate(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    description = models.TextField(blank=True)
+    xml = models.TextField(default='')
+    status = models.CharField(max_length=100,default="Unpublished")
+    #start = models.ForeignKey(StartEvent)
+    creator = models.ForeignKey(User,default=1)
+

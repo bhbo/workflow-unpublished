@@ -4,9 +4,21 @@ from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
 from .models import *
+from django.views.decorators.csrf import csrf_exempt
 
 from .forms import *
 
+
+def job(request):
+   return render(request, "workflows/job.html")
+
+
+def announce(request):
+   return render(request, "workflows/announce.html")
+
+
+def funding(request):
+   return render(request, "workflows/funding.html")
 
 def view_profile(request):
     return render(request, "workflows/view_profile.html")
@@ -16,10 +28,34 @@ def profileEdit(request):
     return render(request, 'workflows/profile-edit.html')
 
 def create(request):
-    return render(request, "workflows/create.html")
+    form = WorkflowTemplateForm(request.POST or None)
+
+    if form.is_valid():
+        workflow = form.save(commit=False)
+        workflow.save()
+        request.session['workflowId'] = workflow.id
+        return render(request, 'workflows/modeler.html')
+
+    else:
+        context = {
+            "form": form,
+        }
+        return render(request, 'workflows/create.html', context)
+
+@csrf_exempt
+def saveXML(request):
+    workflowId = request.session['workflowId']
+    if request.is_ajax():
+        if request.method == 'POST':
+            workflow = WorkflowTemplate.objects.get(id=workflowId)
+            workflow.xml = request.POST.get('userXml')
+            workflow.save()
+            return render(request, 'workflows/index.html')
+
 
 
 def modeler(request):
+
     return render(request, "workflows/modeler.html")
 
 

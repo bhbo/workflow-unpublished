@@ -41,26 +41,27 @@
 
 
 
-<form role="form" action="{% url 'workflows:create'%}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
+<form id="msform" role="form" action="{% url 'workflows:create'%}" method="post" enctype="multipart/form-data">
   <!-- progressbar -->
   <ul id="progressbar">
-    <li class="active">DESIGN FORM</li>
+    <li class="active">CREATE WORKFLOW</li>
     <li>DESIGN WORKFLOW</li>
-    <li>CHANGE PERMISSION</li>
-    <li>PUBLISH APP</li>
+    <li>DESIGN FORM</li>
+    <li>PUBLISH WORKFLOW</li>
   </ul>
   <!-- fieldsets -->
   <fieldset>
-    <h2 class="fs-title">Create task</h2>
-    <h3 class="fs-subtitle">Design form</h3>
-    <input type="text" name="appName" placeholder="Name of the App" />
-    <input type="text" name="appDescription" placeholder="Short description for users" />
-    <ul><a href="{% url 'workflows:modeler' %}"><input type="button" name="next" class="next action-button" value="Next" /></a></ul>
-  </fieldset>
+    <h2 class="fs-title">Create new</h2>
+    <h3 class="fs-subtitle">workflow</h3>
+
+        {% csrf_token %}
         <input type="text" name="name" placeholder="Name of the Workflow" />
         <input type="text" name="description" placeholder="Short description for users" />
         <ul><input type="submit" name="submit" class="next action-button" value="Next" /></ul>
+
+
+  </fieldset>
+
 </form>
 
 

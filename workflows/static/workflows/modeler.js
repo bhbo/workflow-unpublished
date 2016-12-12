@@ -203,26 +203,28 @@ if (typeof module !== "undefined" && module.exports) {
 
 
     // save diagram on button click
-    var saveButton = document.querySelector('#save-button');
 
-    saveButton.addEventListener('click', function() {
 
-      // get the diagram contents
-      bpmnModeler.saveXML({ format: true }, function(err, xml) {
-          
-       
-        if (err) {
+    var saveButton = document.querySelector('#saveXML-button');
+    saveButton.addEventListener('click', function(){
+        bpmnModeler.saveXML({ format: true }, function(err, xml) {
+         if (err) {
           console.error('diagram save failed', err);
         } else {
           console.info('diagram saved');
-          console.info(xml);
-        }
-
-        alert('diagram saved (see console (F12))');
-      });
+          //console.info(xml);
+          $.ajax({
+    		url: "modeler/",
+			type:"POST",
+			data: {userXml:xml}
+		  }).done(function(data){
+			 location.href = "/workflows/";
+		  });
+		 }
+		});
     });
 
-    var downloadButton = document.querySelector('#download-button');
+	  var downloadButton = document.querySelector('#download-button');
     downloadButton.addEventListener('click', function(){
         bpmnModeler.saveXML({ format: true }, function(err, xml) {
          if (err) {

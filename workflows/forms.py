@@ -33,3 +33,16 @@ class StudentForm(forms.ModelForm):
         super(StudentForm, self).__init__(*args, **kwargs)
         self.fields['loopId'].required = False
         self.fields['profileLogo'].required = False
+
+
+class WorkflowTemplateForm(forms.ModelForm):
+    class Meta:
+        model = WorkflowTemplate
+
+        fields = ['name',
+                  'description'
+
+                ]
+
+
+

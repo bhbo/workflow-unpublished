@@ -13,15 +13,15 @@
     <title>Main</title>
     <!--REQUIRED STYLE SHEETS-->
     <!-- BOOTSTRAP CORE STYLE CSS -->
-    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
-    <!-- FONTAWESOME STYLE CSS -->
-    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" />
-    <!--ANIMATED FONTAWESOME STYLE CSS -->
-    <link href="{% static 'assets/css/font-awesome-animation.css' %}" rel="stylesheet" />
+
        <!-- CUSTOM STYLE CSS -->
 
     <!-- GOOGLE FONT -->
+<<<<<<< HEAD
+
+=======
     <link href="http://fonts.googleapis.com/css?family=Montserrat" rel='stylesheet' type='text/css'>
+>>>>>>> origin/master
     <!-- ICON -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
@@ -70,49 +70,59 @@ p{
     font-size: 30px;
     line-height:50px;
 }
-h3 {
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    font-size: 100%;
-    bottom: 0;
 
-}
 
 
 </style>
 
-<div class = "body1">
+
+<div class="content-section-a">
+
+        <div class="container">
+            <div class="row" style = "left:10%">
 
 
-   <h2>Most Popular Apps</h2>
+   <h4 class="section-heading">Most Popular Apps</h4>
 
     <table>
       <tr>
-        <td width = "150" height = "150" bgcolor = "#93c47d" align="center"><a href="{% url 'workflows:job' %}"><img src=" {% static 'image/Employee.png' %}"><h3>Job Application</h3></a></td>
-        <td width = "150" height = "150" bgcolor = "#78909c" align="center"><a href="#2"><img src=" {% static 'image/PalmTree.png' %}"><h3>Vacation Request</h3></a></td>
-        <td width = "150" height = "150" bgcolor = "#f7b600" align="center"><a href="#3"><img src=" {% static 'image/Cart.png' %}"><h3>Project Submitting</h3></a></td>
-        <td width = "150" height = "150" bgcolor = "#de445e" align="center"><a href="#4"><img src="{% static 'image/Trolley.png' %}"><h3>Business Meeting</h3></a></td>
-        <td width = "150" height = "150" bgcolor = "#0097a7" align="center"><a href="{% url 'workflows:announce' %}"><img src="{% static 'image/Receipt.png' %}"><h3>News Posting</h3></a></td>
-        <td width = "150" height = "150" bgcolor = "#93c47d" align="center"><a href="{% url 'workflows:funding' %}"><img src="{% static 'image/Bills.png' %}"><h3>Funding</h3></a></td>
-        <td width = "150" height = "150" bgcolor = "whitesmoke" align="center"><a href="{% url 'workflows:create' %}"><img src="{% static 'image/Plus.png' %}"><h4>Create your own App</h4></a></td>
+        <td width = "150" height = "150" bgcolor = "#93c47d" align="center"><a href="{% url 'workflows:job' %}"><img src=" {% static 'image/Employee.png' %}"><h5>Job Application</h5></a></td>
+        <td width = "150" height = "150" bgcolor = "#78909c" align="center"><a href="#2"><img src=" {% static 'image/PalmTree.png' %}"><h5>Vacation Request</h5></a></td>
+        <td width = "150" height = "150" bgcolor = "#f7b600" align="center"><a href="#3"><img src=" {% static 'image/Cart.png' %}"><h5>Project Submitting</h5></a></td>
+        <td width = "150" height = "150" bgcolor = "#de445e" align="center"><a href="#4"><img src="{% static 'image/Trolley.png' %}"><h5>Business Meeting</h5></a></td>
+        <td width = "150" height = "150" bgcolor = "#0097a7" align="center"><a href="{% url 'workflows:announce' %}"><img src="{% static 'image/Receipt.png' %}"><h5>News Posting</h5></a></td>
+        <td width = "150" height = "150" bgcolor = "#93c47d" align="center"><a href="{% url 'workflows:funding' %}"><img src="{% static 'image/Bills.png' %}"><h5>Funding</h5></a></td>
+        <td width = "150" height = "150" bgcolor = "whitesmoke" align="center"><a href="{% url 'workflows:create' %}"><img src="{% static 'image/Plus.png' %}"><h5>Create your own App</h5></a></td>
+
       </tr>
     </table>
+
     <div class = "button">
           <button>SHOW MORE</button>
     </div>
+
+                </div>
+        </div>
 </div>
 
-<div class = "body2">
-    <p>Your Workflow(s)</p>
-    lalalalalalalaalalal
+<div class="content-section-b">
+
+        <div class="container">
+            <div class="row">
+            <h4 class="section-heading">Your Workflow(s)</h4>
+
+
+                </div>
+        </div>
 </div>
+
 
         <!-- JavaScript -->
     <script src="{% static 'js/jquery-1.10.2.js' %}"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
 	<script src="{% static 'js/owl.carousel.js' %}"></script>
 	<script src="{% static 'js/script.js' %}"></script>
+
     <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
     <!-- CORE JQUERY  -->
     <script src="{% static 'assets/plugins/jquery-1.10.2.js' %}"></script>
