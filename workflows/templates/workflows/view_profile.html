@@ -1,5 +1,5 @@
 {% extends 'workflows/base.html' %}
-{% block title %}Welcome {{ user.username }}! {% endblock %}
+{% block title %} Workflows {{ user.username }}{% endblock %}
 {% block body %}
     {% load staticfiles %}
 
@@ -41,7 +41,8 @@
                                     <!-- USer profile card containner -->
 
                                     <div class="card-content">
-                                        <img src="../avatar.jpg" alt="" class="circle responsive-img activator card-profile-image">
+                                        <img src="{{ student.profileLogo.url }}" alt="" class="circle responsive-img activator card-profile-image">
+
                                         <a class="btn-floating activator btn-move-up waves-effect waves-light darken-2 right">
                                             <i class="large material-icons">toc</i>
                                         </a>
@@ -50,9 +51,9 @@
                                         <span class="card-title activator grey-text text-darken-4">{{ user.username }} </span>
 
 
-                                        <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Bachelor's Degree Year 3</p>
-                                        <p><i class="mdi-content-content-paste cyan-text text-darken-2"></i> {{ student.firstName  }} </p>
-                                        <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i> +1 (612) 222 8989</p>
+                                        <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> {{ student.firstName  }} {{ student.lastName }}</p>
+                                        <p><i class="mdi-content-content-paste cyan-text text-darken-2"></i> {{ student.userType  }} </p>
+                                        <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i> {{  student.mobile }}</p>
                                         <p><i class="mdi-communication-email cyan-text text-darken-2"></i> {{ user.email }} </p>
 
                                     </div>

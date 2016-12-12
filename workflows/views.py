@@ -139,11 +139,25 @@ def profileDetail(request):
     else:
 
         user = request.user
+        try:
+            student = StudentModel.objects.get(user=user)
+        except StudentModel.DoesNotExist:
+            student = {}
 
 
-        print("helllooo")
+        print(student)
 
-        return render(request, 'workflows/view_Profile.html')
+        return render(request, 'workflows/view_Profile.html', {'student': student})
+
+
+def job(request):
+    return render(request, "workflows/job.html")
+
+def announce(request):
+    return render(request, "workflows/announce.html")
+
+def funding(request):
+    return render(request, "workflows/funding.html")
 '''
 
 def profileDetail(request, user):

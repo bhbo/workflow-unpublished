@@ -29,6 +29,7 @@ class StudentForm(forms.ModelForm):
                   'facebookAddress',
                   ]
 
+<<<<<<< HEAD
 class WorkflowTemplateForm(forms.ModelForm):
     class Meta:
         model = WorkflowTemplate
@@ -37,3 +38,9 @@ class WorkflowTemplateForm(forms.ModelForm):
                   'description'
 
                 ]
+=======
+    def __init__(self, *args, **kwargs):
+        super(StudentForm, self).__init__(*args, **kwargs)
+        self.fields['loopId'].required = False
+        self.fields['profileLogo'].required = False
+>>>>>>> origin/master

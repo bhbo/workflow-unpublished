@@ -1,4 +1,4 @@
-{% extends 'workflows/base_visitor.html' %}
+{% extends 'workflows/base.html' %}
 {% load staticfiles %}
 
 {% block body %}
@@ -26,7 +26,8 @@
                                     <li class="collection-item avatar">
                                         <div class="col s12 m4 l2">
                                             <div id='profile-upload'>
-                                                <div class="hvr-profile-img"><input type="file" name="profileLogo" id='getval'  class="upload w180" title="Upload your profile picture" id="imag"></div>
+                                                <div class="hvr-profile-img">
+                                                    <input type="file" name="profileLogo" id='getval'  class="upload w180" title="Upload your profile picture" id="imag"></div>
                                                 <i class="fa fa-camera"></i>
                                             </div>
                                         </div>
@@ -43,7 +44,7 @@
                                     <div class="input-field col s12 m4 l3">
                                     <br>
 									<select class = "browser-default" id="userType" name = "userType">
-                                        <option value=""disabled  selected>Who you are</option>
+                                        <option value= disabled  selected> {{ student.userType }}</option>
                                         <option value="Academic Staff">Academic Staff</option>
                                         <option value="Student">Student</option>
                                         <option value="Alumni">Alumni</option>
@@ -74,7 +75,7 @@
 
 								<div class="input-field col s12 m4 l3">
 									<span class="fieldLabel">First Name</span>
-									<input placeholder="First Name" id="firstName" name = "firstName"type="text"  width="48" />
+									<input placeholder={{ user.username }} id="firstName" name = "firstName"type="text"  width="48" />
 								</div>
 
 								<div class="input-field col s12 m4 l4">
