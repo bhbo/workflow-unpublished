@@ -20,6 +20,7 @@ urlpatterns = [
     url(r'^job/$', views.job, name='job'),
     url(r'^announce/$', views.announce, name='announce'),
     url(r'^funding/$', views.funding, name='funding'),
+    url(r'^(?P<workflow_id>[0-9]+)/$', views.editingWorkflow, name='editWorkflow'),
 
 ]
 

@@ -17,11 +17,9 @@
        <!-- CUSTOM STYLE CSS -->
 
     <!-- GOOGLE FONT -->
-<<<<<<< HEAD
 
-=======
     <link href="http://fonts.googleapis.com/css?family=Montserrat" rel='stylesheet' type='text/css'>
->>>>>>> origin/master
+
     <!-- ICON -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
@@ -49,16 +47,8 @@ button {
     position:relative;
     left: 45%;
 }
-.body1{
-    font-family: montserrat, arial, verdana;
-    font-size:14px;
-    background: whitesmoke;
-
-}
-.body2{
-    font-family: montserrat, arial, verdana;
-    font-size:14px;
-
+img{
+   padding: 5px;
 }
 h2 {
     margin-top: 60px;
@@ -110,6 +100,22 @@ p{
         <div class="container">
             <div class="row">
             <h4 class="section-heading">Your Workflow(s)</h4>
+
+                {% if workflows %}
+                    <table>
+                        <tr>
+
+                    {% for workflow in workflows %}
+
+                        <td width = "150" height = "150" bgcolor = "#de445e" align="center"><a href="{% url 'workflows:editWorkflow' workflow.id %}"><img src="{% static 'img/file.png' %}"><h5>{{ workflow.name}}</h5></a></td>
+
+                    {% endfor %}
+                        </tr>
+
+                    </table>
+                {% else %}
+                    <p class="lead">You have not created any workflow yet</p>
+                {% endif %}
 
 
                 </div>

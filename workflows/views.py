@@ -8,6 +8,13 @@ from django.views.decorators.csrf import csrf_exempt
 
 from .forms import *
 
+def editingWorkflow(request, workflow_id):
+    if not request.user.is_authenticated():
+        return render(request, 'workflows/login.html')
+    else:
+        user = request.user
+        workflow = get_object_or_404(WorkflowTemplate, pk=workflow_id)
+        return render(request, 'workflows/modeler.html', {'editingWorkflow': workflow, 'user': user})
 
 def job(request):
    return render(request, "workflows/job.html")
@@ -32,6 +39,7 @@ def create(request):
 
     if form.is_valid():
         workflow = form.save(commit=False)
+        workflow.creator = request.user
         workflow.save()
         request.session['workflowId'] = workflow.id
         return render(request, 'workflows/modeler.html')
@@ -50,7 +58,9 @@ def saveXML(request):
             workflow = WorkflowTemplate.objects.get(id=workflowId)
             workflow.xml = request.POST.get('userXml')
             workflow.save()
-            return render(request, 'workflows/index.html')
+            user = request.user
+            workflows = WorkflowTemplate.objects.filter(creator=user)
+            return render(request, 'workflows/index.html', {'workflows': workflows})
 
 
 
@@ -63,7 +73,9 @@ def index(request):
     if not request.user.is_authenticated():
         return register(request)
     else:
-        return render(request, 'workflows/index.html')
+        user = request.user
+        workflows = WorkflowTemplate.objects.filter(creator=user)
+        return render(request, 'workflows/index.html', {'workflows': workflows})
 
 
 def logout_user(request):
@@ -74,7 +86,7 @@ def logout_user(request):
     }
     return render(request, 'workflows/login.html', context)
 
-
+@csrf_exempt
 def login_user(request):
     if request.method == "POST":
         username = request.POST['username']
@@ -83,7 +95,10 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return render(request, 'workflows/index.html')
+                user = request.user
+                workflows = WorkflowTemplate.objects.filter(creator=user)
+                return render(request, 'workflows/index.html', {'workflows': workflows})
+
             else:
                 return render(request, 'workflows/login.html', {'error_message': 'Your account has been disabled'})
         else:
