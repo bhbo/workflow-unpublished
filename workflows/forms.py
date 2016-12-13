@@ -40,7 +40,7 @@ class WorkflowTemplateForm(forms.ModelForm):
         model = WorkflowTemplate
 
         fields = ['name',
-                  'description'
+                  'description',
 
                 ]
 

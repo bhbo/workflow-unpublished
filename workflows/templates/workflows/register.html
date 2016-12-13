@@ -111,7 +111,6 @@
 
 				<div class="col-sm-6 pull-right wow fadeInRightBig">
                     <img class="img-responsive " src="{% static 'img/imac-w.png' %}" alt="">
-                    <img class="img-responsive " src="{% static 'img/bpmn.gif' %}">
                 </div>
 
                 <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">
@@ -122,7 +121,7 @@
 					<ul class="descp lead2">
 						<li><i class="glyphicon glyphicon-signal"></i> Reliable and Secure Platform</li>
 						<li><i class="glyphicon glyphicon-refresh"></i> Everything is perfectly orgainized for future</li>
-						<li><i class="glyphicon glyphicon-headphones"></i> Attach large file easily</li>
+						<li><i class="glyphicon glyphicon-headphones"></i> BPMN 2.0 </li>
 					</ul>
 				</div>
             </div>
@@ -131,10 +130,29 @@
     </div>
 
 
+    <!--
 
+
+			</div>
+
+
+
+            <div class="row">
+
+
+                    <img class="img-responsive " src="{% static 'img/bpmn.gif' %}">
+             </div>
+
+
+
+			</div>
+
+
+
+-->
 
     <!-- sign up -->
-	<div id="#signup" class="content-section-a">
+	<div id="signup" class="content-section-a">
 		<div class="container" >
 			<div class="row">
 
@@ -149,7 +167,7 @@
 
 				<div class="col-md-6" style = "left:25%">
 					<div class="form-group">
-						<label for="InputName">Your Name</label>
+						<label for="InputName">Username</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="username" id="InputName" placeholder="Enter Name" required>
 							<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
@@ -157,7 +175,7 @@
 					</div>
 
 					<div class="form-group">
-						<label for="InputEmail">Your Email</label>
+						<label for="InputEmail">Email</label>
 						<div class="input-group">
 							<input type="email" class="form-control" id="InputEmail" name="email" placeholder="Enter Email" required  >
 							<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
@@ -165,7 +183,7 @@
 					</div>
 
 					<div class="form-group">
-                        <label for="InputPassword">Your Password</label>
+                        <label for="InputPassword">Password</label>
 						<div class="input-group">
 							<input type="password" class="form-control" id="InputEmail" name="password" placeholder="Enter password" required  >
 							<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
@@ -173,7 +191,7 @@
 					</div>
 
                       <div class="panel-footer">
-                    Already have an account? <a href="{% url 'workflows:login_user' %}">Click here</a> to log in.
+                    Already have an account? <a href="{% url 'workflows:login_user' %}"> <font color="red"> Click here </font></a> to log in.
                 </div>
 					<input type="submit" name="submit" id="submit" value="Submit" class="btn wow tada btn-embossed btn-primary pull-right">
 				</div>
