@@ -15,7 +15,7 @@
 
     #saveXML-button {
       position: absolute;
-      bottom: 50px;
+      bottom: 80px;
       right: 20px;
     }
 
@@ -57,7 +57,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src=" {% static 'workflows/bower_components/bpmn-js/dist/bpmn-modeler.js' %} "></script>
 
+    {% if editingWorkflow %}
   <!-- application -->
-  <script src=" {% static 'workflows/modeler.js' %} "></script>
+    <script type="text/javascript">
+       var workingXML = "{{editingWorkflow.xml}}";
+
+    </script>
+
+    {% else %}
+
+        <script src=" {% static 'workflows/modeler.js' %} "></script>
+
+    {%  endif %}
 
 {% endblock %}
