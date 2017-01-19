@@ -162,7 +162,7 @@ def profileDetail(request):
 
         print(student)
 
-        return render(request, 'workflows/view_Profile.html', {'student': student})
+        return render(request, 'workflows/view_profile.html', {'student': student})
 
 
 def job(request):
